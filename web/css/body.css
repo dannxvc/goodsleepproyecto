@@ -1,0 +1,25 @@
+#pink{
+    --body-home: var(--pink);
+}
+#sky-blue{
+    --body-home: var(--sky-blue);
+}
+#gray{
+    --body-home: var(--gray);
+}
+#black{
+    --body-home: var(--black);
+}
+#aqua-light{
+    --body-home: var(--aqua-light);
+}
+#yellow{
+    --body-home: var(--yellow);
+}
+#purple{
+    --body-home: var(--purple);
+}
+#white{
+    --body-home: var(--white);
+}
+

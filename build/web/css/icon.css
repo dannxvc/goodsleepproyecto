@@ -1,0 +1,22 @@
+.login-icon{
+    width: 1.5rem;
+}
+.icon{
+    box-shadow: 0 3px 5px rgba(0,0,0,0.19);
+    border-radius: 50%;
+}
+.nav-icon{
+    width: 2.3rem;
+    background-color: var(--body-home);
+    padding: 0.7rem;
+    margin: 0.5rem;
+}
+.contact-icon{
+    width: 3rem;
+    background-color: var(--white);
+    padding: 0.4rem;
+    margin: 0.5rem;
+}
+.icon-active{
+    background-color: var(--white);
+}

@@ -1,0 +1,78 @@
+.section-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin: 1rem 3%;
+    border-radius: 0.25rem;
+    padding: 2rem;
+}
+.section-form-login{
+    background-color: var(--white);
+}
+.p-pink{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--pink);
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+.form-crear-cuenta{
+    height: 50rem;
+}
+.form-reservar{
+    min-height: 40rem;
+    width: 50rem;
+}
+.form-login{
+    min-height: 12rem;
+}
+.form-login-admi{
+    min-height: 16.5rem;
+}
+.input{
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.19);
+}
+.input-gray{
+    background-color: var(--gray);
+    color:var(--white);
+    height: 4.25rem;
+}
+.input-pink{
+    background-color: var(--pink);
+    color:var(--white);
+    height: 4.25rem;
+}
+.input-white{
+    background-color: var(--white);
+    color:var(--black);
+    height: 8rem;
+    resize: none;
+}
+
+.input-pink-dark{
+    background-color: var(--pink-dark);
+    color:var(--white);
+    height: 4.25rem;
+}
+
+@media (min-width:32rem){
+    .section-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 25rem;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 0.25rem;
+    }
+}

@@ -1,0 +1,100 @@
+#main-categoria{
+    margin: 3rem 5% 3rem 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    gap:3rem;
+}
+.card-categoria{
+    height: 20rem;
+    margin: 0;
+}
+.cat-descripcion{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+    background-color: var(--black);
+    border-radius: 0.25rem;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.19);
+    padding:1rem 0.5rem;
+}
+.cat-descripcion-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.cat-imgs{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    align-items: center;
+}
+.cat-detalle{
+    align-items: left;
+}
+.cat-icon{
+    width: 3rem;
+}
+.card-cat-img{
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+.card-img-large{
+    width: 100%;
+}
+.card-img-short{
+    width: 100%;
+}
+@media (min-width:68.75rem){
+    #main-categoria{
+        margin: 3rem auto 3rem auto;
+        width: 65rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+    .card-categoria{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .cat-descripcion{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+    }
+    .card-cat-img-1{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .card-cat-img-2{
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+    .card-cat-img-3{
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end:4 ;
+    }
+    .card-cat-img-4{
+        grid-column-start: 2;
+        grid-column-end: 4;
+        grid-row-start: 3;
+        grid-row-end: 4;
+    }
+    .card-img-large{
+        width: 100%;
+    }
+    .card-img-short{
+        height: 100%;
+    }
+    .card-cat-img{
+        height: 20rem;
+    }
+}

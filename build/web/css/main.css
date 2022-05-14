@@ -1,0 +1,48 @@
+:root{
+    --pink:hsl(339,100%,48%);
+    --pink-dark:hsl(339,75%,32%);
+    --white:rgb(255, 255, 255);
+    --black:rgb(0, 0, 0);
+    --gray:hsl(0,2%,16%);
+    --sky-blue:hsl(190,80%,56%);
+    --aqua:hsl(188,71%,77%);
+    --aqua-light:hsl(184,34%,71%);
+    --yellow:hsl(31, 91%, 56%);
+    --purple:hsl(255,86%,67%);
+    --purple-light:rgb(210, 201, 238);
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+html{
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--body-home);
+}
+h1,p{
+    color: var(--white);
+}
+h1{
+    font-size: 4.5rem;
+    margin:4rem 0 1.5rem 0;
+    font-weight: 400;
+}
+.h1-dark{
+    color: var(--black);
+}
+h2{
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+a{
+    text-decoration: none;
+}
+@media (max-width:26rem){
+    h1{
+        font-size: 3rem;
+    }
+}

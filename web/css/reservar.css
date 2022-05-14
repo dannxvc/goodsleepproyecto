@@ -1,0 +1,41 @@
+.form-col{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--gray);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.19);
+}
+.label-col{
+    display: flex;
+    flex-direction: column;
+    color: var(--gray);
+    width: 100%;
+}
+.label-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0.4rem;
+    align-items: center;
+    color: var(--white);
+}
+.label-grid-two{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+.label-radio{
+    position: relative;
+    background-color: var(--white);
+    font-size: 0.8rem;
+    height: 100%;
+    text-align: center;
+    color: var(--gray);
+}
+input[type=radio]{
+    position:absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.2;
+} 

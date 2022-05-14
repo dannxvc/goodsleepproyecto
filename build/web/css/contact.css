@@ -1,0 +1,60 @@
+#main-contact{
+    margin: 4rem 4% 1rem 4%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap:5rem;
+    font-family: 'Poppins', sans-serif;
+    width: auto;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    height: 32rem;
+    justify-content: space-evenly;
+    border-radius: 1rem;
+}
+.form-contact{
+    display: flex;
+    flex-direction: column;
+}
+.card{
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 8px 8px 15px rgba(0,0,0,0.19);
+}
+.card-white{
+    background-color: var(--white);
+}
+.card-pink{
+    background-color: var(--pink);
+    color: var(--white);
+}
+.card-gray{
+    background-color: var(--gray);
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (min-width:70rem){
+    #main-contact{
+        margin: 6rem auto 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap:8rem;
+        font-family: 'Poppins', sans-serif;
+        width: 60rem;
+    }
+    .contact{
+        height: 27rem;
+    }
+    .card-contact{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }   
+    .card-comment{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+}
