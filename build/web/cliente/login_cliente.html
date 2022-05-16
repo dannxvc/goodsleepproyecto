@@ -29,10 +29,10 @@
         <section class="section-form section-form-login">
             <h2>Te damos la bienvenida!</h2>
             <p class="p-pink">Ingresa con tu usuario y password para poder reservar tu habitacion!</p>
-            <form class="form form-login form-login-cliente" method="post">
+            <form class="form form-login form-login-cliente" action="UCcontrol" method="post">
                 <input class="input input-gray" type="text" placeholder="Usuario" name="usuario" required>
                 <input class="input input-gray" type="password" placeholder="Password" name="password" required>
-                <input type="submit" class="btn btn-pink" value="INICIAR SESION">
+                <input type="submit" class="btn btn-pink" name="accion" value="INICIAR SESION">
             </form>
             <a class="btn btn-white" href="crear_cuenta.html">NO TIENES CUENTA? CREATE UNA</a>
         </section>

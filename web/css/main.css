@@ -10,6 +10,7 @@
     --yellow:hsl(31, 91%, 56%);
     --purple:hsl(255,86%,67%);
     --purple-light:rgb(210, 201, 238);
+    --error: hsla(0, 100%, 47%, 0.38);
 }
 *, *:before, *:after {
     box-sizing: inherit;

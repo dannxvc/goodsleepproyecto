@@ -3,17 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/usuario_cliente.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/Admi.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/util/MySQLConexion.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/Cliente.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/Empresa.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/Habitacion.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/Reservar_Habitacion.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/util/SQLConexion.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/Categoria.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/util/prueba1.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/Servicio_Adicional.java</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/web/login_cliente.jsp</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/web/css/header.css</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/web/css/main.css</file>
+            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/web/css/form.css</file>
         </group>
     </open-files>
 </project-private>

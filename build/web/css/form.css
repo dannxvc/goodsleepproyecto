@@ -64,7 +64,17 @@
     color:var(--white);
     height: 4.25rem;
 }
-
+.msg-error{
+    display: flex;
+    padding: 1rem;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid red;
+    border-radius: 0.25rem;
+    background-color: var(--error);
+    color: var(--white);
+}
 @media (min-width:32rem){
     .section-form{
         display: flex;
