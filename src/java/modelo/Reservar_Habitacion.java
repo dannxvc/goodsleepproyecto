@@ -1,27 +1,41 @@
 package modelo;
-public class Reservar_Habitacion { 
-         String id_reserva;
-         String id_cliente;
-         String fechaInicio;
-         String fechaFinal;
-         String codHabita;
-         String subtotal;
-         String cod_servA;
-         String cant_personas;
-         String precioTotal;
-         String estado;
-         
-public Reservar_Habitacion() {
-        id_reserva="";
-        id_cliente="";
-        fechaInicio="";
-        fechaFinal="";
-        codHabita="";
-        subtotal="";
-        cod_servA="";
-        cant_personas="";
-        precioTotal="";
-        estado="";
+
+import java.sql.Date;
+
+public class Reservar_Habitacion{ 
+         private String id_reserva;
+         private int id_cliente;
+         private Date fechaInicio;
+         private Date fechaFinal;
+         private String codHabita;
+         private double subtotal;
+         private String cod_servA;
+         private int cant_personas;
+         private double precioTotal;
+         private String estado;
+
+    public Reservar_Habitacion() {
+    }
+
+    public Reservar_Habitacion(String id_reserva, int id_cliente, Date fechaInicio, Date fechaFinal, String codHabita, double subtotal, String cod_servA, int cant_personas, double precioTotal, String estado) {
+        this.id_reserva = id_reserva;
+        this.id_cliente = id_cliente;
+        this.fechaInicio = fechaInicio;
+        this.fechaFinal = fechaFinal;
+        this.codHabita = codHabita;
+        this.subtotal = subtotal;
+        this.cod_servA = cod_servA;
+        this.cant_personas = cant_personas;
+        this.precioTotal = precioTotal;
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getId_reserva() {
@@ -32,28 +46,12 @@ public Reservar_Habitacion() {
         this.id_reserva = id_reserva;
     }
 
-    public String getId_cliente() {
+    public int getId_cliente() {
         return id_cliente;
     }
 
-    public void setId_cliente(String id_cliente) {
+    public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
-    }
-
-    public String getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(String fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    public String getFechaFinal() {
-        return fechaFinal;
-    }
-
-    public void setFechaFinal(String fechaFinal) {
-        this.fechaFinal = fechaFinal;
     }
 
     public String getCodHabita() {
@@ -64,11 +62,11 @@ public Reservar_Habitacion() {
         this.codHabita = codHabita;
     }
 
-    public String getSubtotal() {
+    public double getSubtotal() {
         return subtotal;
     }
 
-    public void setSubtotal(String subtotal) {
+    public void setSubtotal(double subtotal) {
         this.subtotal = subtotal;
     }
 
@@ -80,28 +78,40 @@ public Reservar_Habitacion() {
         this.cod_servA = cod_servA;
     }
 
-    public String getCant_personas() {
+    public int getCant_personas() {
         return cant_personas;
     }
 
-    public void setCant_personas(String cant_personas) {
+    public void setCant_personas(int cant_personas) {
         this.cant_personas = cant_personas;
     }
 
-    public String getPrecioTotal() {
+    public double getPrecioTotal() {
         return precioTotal;
     }
 
-    public void setPrecioTotal(String precioTotal) {
+    public void setPrecioTotal(double precioTotal) {
         this.precioTotal = precioTotal;
     }
 
-    public String getEstado() {
-        return estado;
+    public Date getFechaInicio() {
+        return fechaInicio;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
     }
+
+    public Date getFechaFinal() {
+        return fechaFinal;
+    }
+
+    public void setFechaFinal(Date fechaFinal) {
+        this.fechaFinal = fechaFinal;
+    }
+
+    
+    
+    
     
 }

@@ -1,29 +1,39 @@
 
 package modelo;
 
-
 public class Cliente {
-   String id_cliente;
-   String tipoDoc;
-   String nombre;
-   String apellido;
-   String celular;
-   String correo;
-
+   private int id_cliente;
+   private String tipoDoc;
+   private String nombre;
+   private String apellido;
+   private String celular;
+   private String correo;
+   
     public Cliente() {
-    id_cliente="";
-    tipoDoc="";
-    nombre="";
-    apellido="";
-    celular="";
-    correo="";
     }
 
-    public String getId_cliente() {
+    public Cliente(int id_cliente, String tipoDoc, String nombre, String apellido, String celular, String correo) {
+        this.id_cliente = id_cliente;
+        this.tipoDoc = tipoDoc;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.celular = celular;
+        this.correo = correo;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public int getId_cliente() {
         return id_cliente;
     }
 
-    public void setId_cliente(String id_cliente) {
+    public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
     }
 
@@ -58,20 +68,4 @@ public class Cliente {
     public void setCelular(String celular) {
         this.celular = celular;
     }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    
-
-    
-    
-   
-    
-    
 }

@@ -3,24 +3,35 @@ package modelo;
 
 
 public class Categoria {
-   String catcategoria;
-   String nombreCat;
-    String descripcion;
-    String precio;
+    private String codCategoria;
+    private String nombreCat;
+    private String descripcion;
+    private String precio;
 
     public Categoria() {
-    catcategoria="";
-     nombreCat="";
-     descripcion="";
-     precio="";
     }
 
-    public String getCatcategoria() {
-        return catcategoria;
+    public Categoria(String codCategoria, String nombreCat, String descripcion, String precio) {
+        this.codCategoria = codCategoria;
+        this.nombreCat = nombreCat;
+        this.descripcion = descripcion;
+        this.precio = precio;
     }
 
-    public void setCatcategoria(String catcategoria) {
-        this.catcategoria = catcategoria;
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
+    public String getCodCategoria() {
+        return codCategoria;
+    }
+
+    public void setCodCategoria(String codCategoria) {
+        this.codCategoria = codCategoria;
     }
 
     public String getNombreCat() {
@@ -39,19 +50,5 @@ public class Categoria {
         this.descripcion = descripcion;
     }
 
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
-        this.precio = precio;
-    }
-
-   
-
-   
-    
-    
-    
     
 }

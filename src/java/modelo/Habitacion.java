@@ -2,18 +2,29 @@
 package modelo;
 
 public class Habitacion {
-    String codHabitacion;
-    String catcategoria;
-    String piso;
-    String id_empresa;
-    String estado;
-
+    private String codHabitacion;
+    private String catcategoria;
+    private String piso;
+    private String id_empresa;
+    private String estado;
+        
     public Habitacion() {
-    codHabitacion="";
-    catcategoria="";
-    piso="";
-    id_empresa="";
-    estado=""; 
+    }
+    
+    public Habitacion(String codHabitacion, String catcategoria, String piso, String id_empresa, String estado) {
+        this.codHabitacion = codHabitacion;
+        this.catcategoria = catcategoria;
+        this.piso = piso;
+        this.id_empresa = id_empresa;
+        this.estado = estado;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public String getCodHabitacion() {
@@ -47,14 +58,8 @@ public class Habitacion {
     public void setId_empresa(String id_empresa) {
         this.id_empresa = id_empresa;
     }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
+    
+    
     
     
     

@@ -1,12 +1,10 @@
 package modelo;
 
 public class Empresa {
-    String id_empresa;
-    String nombre;
+    private String id_empresa;
+    private String nombre;
 
     public Empresa() {
-    id_empresa="";
-    nombre="";
     }
 
     public String getId_empresa() {
@@ -24,6 +22,8 @@ public class Empresa {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    
 
    
    

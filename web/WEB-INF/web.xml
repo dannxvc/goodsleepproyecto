@@ -8,6 +8,18 @@
         <servlet-name>uccontrol</servlet-name>
         <servlet-class>miServlet.uccontrol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>svRegistro</servlet-name>
+        <servlet-class>miServlet.svRegistro</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>svReserva</servlet-name>
+        <servlet-class>miServlet.svReserva</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>svAdicionCliente</servlet-name>
+        <servlet-class>miServlet.svAdicionCliente</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UCcontrol</servlet-name>
         <url-pattern>/UCcontrol</url-pattern>
@@ -15,6 +27,18 @@
     <servlet-mapping>
         <servlet-name>uccontrol</servlet-name>
         <url-pattern>/uccontrol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>svRegistro</servlet-name>
+        <url-pattern>/svRegistro</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>svReserva</servlet-name>
+        <url-pattern>/svReserva</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>svAdicionCliente</servlet-name>
+        <url-pattern>/svAdicionCliente</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -3,22 +3,15 @@ package modelo;
 
 
 public class Admi {
-      String id_admi;
-      String nombre;
-      String apellido;
-      String celular;
-      String correo;
-      String rol;
-      String id_empresa;
+      private String id_admi;
+      private String nombre;
+      private String apellido;
+      private String celular;
+      private String correo;
+      private String rol;
+      private String id_empresa;
 
     public Admi() {
-    id_admi="";
-    nombre="";
-    apellido="";
-    celular="";
-    correo="";
-    rol="";
-    id_empresa="";
     }
 
     public String getId_admi() {
@@ -76,9 +69,6 @@ public class Admi {
     public void setId_empresa(String id_empresa) {
         this.id_empresa = id_empresa;
     }
-     
-   
-      
-      
-     
+
+    
 }
