@@ -16,14 +16,14 @@
 </head>
 <body id="black">
     <header id="header">
-        <a href="../index.html" class="btn btn-login btn-logout">
+        <a href="index.html" class="btn btn-login btn-logout">
             <img class="login-icon"src="img/home.svg" alt="log in">
             INICIO
          </a>
         <h1>log in</h1>
     </header>
     <nav id="navbar">
-        <a href="admi/login_admi.html">
+        <a href="login_admi.jsp">
             <img class="icon nav-icon icon-active" src="img/laptop.svg" alt="go to login for admi">
         </a>
     </nav>

@@ -1,3 +1,5 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,31 +11,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Good Sleep | Log In Admi</title>
 </head>
 <body id="purple">
     <header id="header">
-        <a href="../index.html" class="btn btn-login btn-logout">
-            <img class="login-icon"src="../img/home.svg" alt="log in">
+        <a href="index.html" class="btn btn-login btn-logout">
+            <img class="login-icon"src="img/home.svg" alt="log in">
             INICIO
          </a>
         <h1>log in admi</h1>
     </header>
     <nav id="navbar">
-        <a href="../cliente/login_cliente.html">
-            <img class="icon nav-icon" src="../img/profile.svg" alt="go to login for admi">
+        <a href="login_cliente.jsp">
+            <img class="icon nav-icon" src="img/profile.svg" alt="go to login for admi">
         </a>
     </nav>
     <main id="crear-cuenta">
         <section class="section-form section-form-login">
             <h2>Hola, admi!</h2>
-            <form class="form form-login form-login-admi" method="post">
+            <form class="form form-login form-login-admi"action="uacontrol?accion=verificar"  method="post">
                 <input class="input input-gray" type="text" placeholder="Usuario" name="usuario" required>
                 <input class="input input-gray" type="password" placeholder="Password" name="password" required>
-                <p class="p-pink"><img class="login-icon" src="../img/danger.svg" alt=""> Log In solo para administrador@s.  </p>
-                <input type="submit" class="btn btn-pink" value="INICIAR SESION">
+                <p class="p-pink"><img class="login-icon" src="img/danger.svg" alt=""> Log In solo para administrador@s.  </p>
+                <input type="submit" name="verificar" class="btn btn-pink" value="INICIAR SESION">
             </form>
+            <div class="msg-error" role="alert">${msje}</div>
         </section>
         
     </main>

@@ -1,13 +1,10 @@
-package org.apache.jsp.cliente;
+package org.apache.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import modelo.*;
-import java.util.*;
-import miServlet.*;
 
-public final class login_005fcliente_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class login_005fadmi_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -52,54 +49,39 @@ public final class login_005fcliente_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("    <meta charset=\"UTF-8\">\n");
       out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
-      out.write("    <link rel=\"icon\" href=\"img/logo.png\" type=\"image/png\">\n");
+      out.write("    <link rel=\"icon\" href=\"/img/logo.png\" type=\"image/png\">\n");
       out.write("    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n");
       out.write("    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n");
       out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap\" rel=\"stylesheet\">\n");
       out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap\" rel=\"stylesheet\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"css/index.css\">\n");
-      out.write("    <title>Good Sleep | Log In</title>\n");
+      out.write("    <title>Good Sleep | Log In Admi</title>\n");
       out.write("</head>\n");
-      out.write("<body id=\"black\">\n");
+      out.write("<body id=\"purple\">\n");
       out.write("    <header id=\"header\">\n");
-      out.write("        <a href=\"../index.html\" class=\"btn btn-login btn-logout\">\n");
+      out.write("        <a href=\"index.html\" class=\"btn btn-login btn-logout\">\n");
       out.write("            <img class=\"login-icon\"src=\"img/home.svg\" alt=\"log in\">\n");
       out.write("            INICIO\n");
       out.write("         </a>\n");
-      out.write("        <h1>log in</h1>\n");
+      out.write("        <h1>log in admi</h1>\n");
       out.write("    </header>\n");
       out.write("    <nav id=\"navbar\">\n");
-      out.write("        <a href=\"admi/login_admi.html\">\n");
-      out.write("            <img class=\"icon nav-icon icon-active\" src=\"img/laptop.svg\" alt=\"go to login for admi\">\n");
+      out.write("        <a href=\"login_cliente.jsp\">\n");
+      out.write("            <img class=\"icon nav-icon\" src=\"img/profile.svg\" alt=\"go to login for admi\">\n");
       out.write("        </a>\n");
       out.write("    </nav>\n");
       out.write("    <main id=\"crear-cuenta\">\n");
       out.write("        <section class=\"section-form section-form-login\">\n");
-      out.write("            <h2>Te damos la bienvenida!</h2>\n");
-      out.write("            <p class=\"p-pink\">Ingresa con tu usuario y password para poder reservar tu habitacion!</p>\n");
-      out.write("            <form class=\"form form-login form-login-cliente\" action=\"uccontrol\" method=\"post\">\n");
+      out.write("            <h2>Hola, admi!</h2>\n");
+      out.write("            <form class=\"form form-login form-login-admi\"action=\"uacontrol?accion=verificar\"  method=\"post\">\n");
       out.write("                <input class=\"input input-gray\" type=\"text\" placeholder=\"Usuario\" name=\"usuario\" required>\n");
       out.write("                <input class=\"input input-gray\" type=\"password\" placeholder=\"Password\" name=\"password\" required>\n");
-      out.write("                <input type=\"submit\" class=\"btn btn-pink\" name=\"btn\" value=\"INICIAR SESION\">\n");
-      out.write("                <input type=\"hidden\" class=\"btn btn-pink\" name=\"op\" value=\"login\">\n");
+      out.write("                <p class=\"p-pink\"><img class=\"login-icon\" src=\"img/danger.svg\" alt=\"\"> Log In solo para administrador@s.  </p>\n");
+      out.write("                <input type=\"submit\" name=\"verificar\" class=\"btn btn-pink\" value=\"INICIAR SESION\">\n");
       out.write("            </form>\n");
-      out.write("            \n");
-      out.write("            <a class=\"btn btn-white\" href=\"crear_cuenta.html\">NO TIENES CUENTA? CREATE UNA</a>\n");
-      out.write("           ");
-
-                    if(request.getAttribute("msq")!=null){
-                        String msg=request.getAttribute("msq").toString();
-           
-      out.write("\n");
-      out.write("                 <div class=\"msg-error\" role=\"alert\">");
-      out.print(msg);
+      out.write("            <div class=\"msg-error\" role=\"alert\">");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${msje}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("</div>\n");
-      out.write("            ");
-
-                }
-             
-      out.write("\n");
-      out.write("          \n");
       out.write("        </section>\n");
       out.write("        \n");
       out.write("    </main>\n");

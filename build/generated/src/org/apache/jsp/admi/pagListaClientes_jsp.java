@@ -1,4 +1,4 @@
-package org.apache.jsp;
+package org.apache.jsp.admi;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -46,11 +46,7 @@ public final class pagListaClientes_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-
-    if(session.getAttribute("usuarioA")!=null){  
-
-      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"es\">\r\n");
       out.write("<head>\r\n");
@@ -59,26 +55,23 @@ public final class pagListaClientes_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css\" integrity=\"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\r\n");
       out.write("    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">\r\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/navAdmi.css\">\r\n");
-      out.write("    <link rel=\"stylesheet\" href=\"css/clienteAdmi.css\">\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"..css/navAdmi.css\">\r\n");
+      out.write("    <link rel=\"stylesheet\" href=\"../css/clienteAdmi.css\">\r\n");
       out.write("    <title>Document</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("    <header>\r\n");
       out.write("        <nav>\r\n");
       out.write("            <div class=\"infoUsuario\">\r\n");
-      out.write("                <img src=\"img/admi/");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioA.usuario}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write(".svg\" alt=\"\">\r\n");
-      out.write("                <p> Hola, ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioA.usuario}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("!</p>\r\n");
+      out.write("                <h2>Sistema</h2>\r\n");
+      out.write("                <img src=\"img/user.png\" alt=\"\">\r\n");
+      out.write("                <p class=\"mt-3\">USUARIO</p>\r\n");
       out.write("            </div>\r\n");
       out.write("                <li><a href=\"\"><span><i class=\"fa-regular fa-address-card\"></i></span> Registro</a></li>\r\n");
       out.write("                <li><a href=\"pagListaClientes.jsp\"><span><i class=\"fa-solid fa-user\"></i></span> Clientes</a></li>\r\n");
       out.write("                <li><a href=\"\"><span><i class=\"fa-solid fa-bed\"></i></span> Lista Habitaciones</a></li>\r\n");
       out.write("                <li><a href=\"\"><span><i class=\"fa-regular fa-pen-to-square\"></i></span> Mantenimiento</a></li>\r\n");
-      out.write("                <li><a href=\"uacontrol?accion=cerrar\"><span><i class=\"fa-solid fa-right-from-bracket\"></i></span> Cerrar sesion</a></li>\r\n");
+      out.write("                <li><a href=\"\"><span><i class=\"fa-solid fa-right-from-bracket\"></i></span> Cerrar sesion</a></li>\r\n");
       out.write("        </nav>\r\n");
       out.write("    </header>\r\n");
       out.write("        <div class=\"modal-contenedor\">\r\n");
@@ -147,12 +140,7 @@ public final class pagListaClientes_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    </main>\r\n");
       out.write("    <script src=\"js/modal.js\"></script>\r\n");
       out.write("</body>\r\n");
-      out.write("</html>\r\n");
-
-   }else{
-    response.sendRedirect("login_admi.jsp");
-} 
-
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

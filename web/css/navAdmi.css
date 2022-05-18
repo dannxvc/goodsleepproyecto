@@ -1,3 +1,4 @@
+@import url(./main.css);
 *{
     margin: 0;
     padding: 0;
@@ -6,11 +7,12 @@
 body{
     display: flex;
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 nav{
-    background-color: #112B3C;
+    background-color: var(--gray);
     height: 100vh;
     position: fixed;
     width: 13%;
@@ -29,7 +31,7 @@ li{
 }
 
 li:hover{
-    background-color: #205375;
+    background-color: var(--purple-dark);
 }
 
 li a{
@@ -42,7 +44,7 @@ li a:hover{
 }
 
 .infoUsuario{
-    background-color: #1D5C63;
+    background-color: var(--purple);
     text-align: center;
     padding: 10px;
     height: 250px;

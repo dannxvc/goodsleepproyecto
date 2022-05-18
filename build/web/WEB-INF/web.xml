@@ -20,6 +20,10 @@
         <servlet-name>svAdicionCliente</servlet-name>
         <servlet-class>miServlet.svAdicionCliente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>uacontrol</servlet-name>
+        <servlet-class>miServlet.uacontrol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UCcontrol</servlet-name>
         <url-pattern>/UCcontrol</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>svAdicionCliente</servlet-name>
         <url-pattern>/svAdicionCliente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>uacontrol</servlet-name>
+        <url-pattern>/uacontrol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

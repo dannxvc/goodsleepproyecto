@@ -1,18 +1,25 @@
 
 package modelo;
-
-
 public class Admi {
-      private String id_admi;
+    private String id_admi;
       private String nombre;
       private String apellido;
       private String celular;
       private String correo;
       private String rol;
       private String id_empresa;
-
-    public Admi() {
+      
+   
+    public Admi(String id_admi, String nombre, String apellido, String celular, String correo, String rol, String id_empresa) {
+        this.id_admi = id_admi;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.celular = celular;
+        this.correo = correo;
+        this.rol = rol;
+        this.id_empresa = id_empresa;
     }
+ public Admi(){}
 
     public String getId_admi() {
         return id_admi;
@@ -69,6 +76,6 @@ public class Admi {
     public void setId_empresa(String id_empresa) {
         this.id_empresa = id_empresa;
     }
-
-    
+      
+      
 }
