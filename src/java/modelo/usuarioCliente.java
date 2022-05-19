@@ -2,15 +2,15 @@
 package modelo;
 
 
-public class usuario_cliente {
+public class usuarioCliente {
     String usuario;
     String password;
-    String id_cliente;
+    private int id_cliente;
 
-    public usuario_cliente() {
+    public usuarioCliente() {
         usuario="";
         password="";
-        id_cliente="";
+        id_cliente=0;
     }
 
     public String getUsuario() {
@@ -29,12 +29,13 @@ public class usuario_cliente {
         this.password = password;
     }
 
-    public String getId_cliente() {
+    public int getId_cliente() {
         return id_cliente;
     }
 
-    public void setId_cliente(String id_cliente) {
+    public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
     }
+
 
 }

@@ -19,7 +19,7 @@ public class Cliente {
         this.apellido = apellido;
         this.celular = celular;
         this.correo = correo;
-    }
+    } 
 
     public String getCorreo() {
         return correo;

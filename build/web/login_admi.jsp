@@ -36,7 +36,14 @@
                 <p class="p-pink"><img class="login-icon" src="img/danger.svg" alt=""> Log In solo para administrador@s.  </p>
                 <input type="submit" name="verificar" class="btn btn-pink" value="INICIAR SESION">
             </form>
-            <div class="msg-error" role="alert">${msje}</div>
+            <%
+                    if(request.getAttribute("msje")!=null){
+                        String msg=request.getAttribute("msje").toString();
+           %>
+                 <div class="msg-error" role="alert"><%=msg%></div>
+            <%
+                }
+             %>
         </section>
         
     </main>

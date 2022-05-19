@@ -24,6 +24,10 @@
         <servlet-name>uacontrol</servlet-name>
         <servlet-class>miServlet.uacontrol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cccontrol</servlet-name>
+        <servlet-class>miServlet.cccontrol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UCcontrol</servlet-name>
         <url-pattern>/UCcontrol</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>uacontrol</servlet-name>
         <url-pattern>/uacontrol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cccontrol</servlet-name>
+        <url-pattern>/cccontrol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -3,8 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import modelo.Cliente;
 
-public final class login_005fadmi_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class perfil_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -43,6 +44,11 @@ public final class login_005fadmi_jsp extends org.apache.jasper.runtime.HttpJspB
 
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+
+    if(session.getAttribute("usuarioC")!=null){  
+
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"en\">\n");
       out.write("<head>\n");
@@ -55,38 +61,68 @@ public final class login_005fadmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap\" rel=\"stylesheet\">\n");
       out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap\" rel=\"stylesheet\">\n");
       out.write("    <link rel=\"stylesheet\" href=\"css/index.css\">\n");
-      out.write("    <title>Good Sleep | Log In Admi</title>\n");
+      out.write("    <title>Good Sleep | Perfil</title>\n");
       out.write("</head>\n");
-      out.write("<body id=\"purple\">\n");
+      out.write("<body id=\"yellow\">\n");
       out.write("    <header id=\"header\">\n");
-      out.write("        <a href=\"index.html\" class=\"btn btn-login btn-logout\">\n");
-      out.write("            <img class=\"login-icon\"src=\"img/home.svg\" alt=\"log in\">\n");
-      out.write("            INICIO\n");
-      out.write("         </a>\n");
-      out.write("        <h1>log in admi</h1>\n");
+      out.write("        <a href=\"uccontrol?accion=cerrar\" class=\"btn btn-login btn-logout\">\n");
+      out.write("           <img class=\"login-icon\" src=\"img/profile.svg\" alt=\"log in\">\n");
+      out.write("           LOG OUT\n");
+      out.write("        </a>\n");
+      out.write("        <h1>hola, ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioC.usuario}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" !!</h1>\n");
       out.write("    </header>\n");
       out.write("    <nav id=\"navbar\">\n");
-      out.write("        <a href=\"login_cliente.jsp\">\n");
-      out.write("            <img class=\"icon nav-icon\" src=\"img/profile.svg\" alt=\"go to login for admi\">\n");
+      out.write("        <a href=\"perfil.html\">\n");
+      out.write("            <img class=\"icon nav-icon icon-active\"  src=\"img/yo.svg\" alt=\"my profile\">\n");
+      out.write("        </a>\n");
+      out.write("        <a href=\"misreservas.html\">\n");
+      out.write("            <img class=\"icon nav-icon\" src=\"img/mis-reser.svg\" alt=\"my reservations\">\n");
+      out.write("        </a>\n");
+      out.write("        <a href=\"reservar.html\">\n");
+      out.write("            <img class=\"icon nav-icon\" src=\"img/reservar.svg\" alt=\"book a room\">\n");
       out.write("        </a>\n");
       out.write("    </nav>\n");
       out.write("    <main id=\"crear-cuenta\">\n");
-      out.write("        <section class=\"section-form section-form-login\">\n");
-      out.write("            <h2>Hola, admi!</h2>\n");
-      out.write("            <form class=\"form form-login form-login-admi\"action=\"uccontrol?accion=verificar\"  method=\"post\">\n");
-      out.write("                <input class=\"input input-gray\" type=\"text\" placeholder=\"Usuario\" name=\"usuario\" required>\n");
-      out.write("                <input class=\"input input-gray\" type=\"password\" placeholder=\"Password\" name=\"password\" required>\n");
-      out.write("                <p class=\"p-pink\"><img class=\"login-icon\" src=\"img/danger.svg\" alt=\"\"> Log In solo para administrador@s.  </p>\n");
-      out.write("                <input type=\"submit\" name=\"verificar\" class=\"btn btn-pink\" value=\"INICIAR SESION\">\n");
+      out.write("        <section class=\"section-form\">\n");
+      out.write("            <form class=\"form form-crear-cuenta\" action=\"control\">\n");
+      out.write("                <p>Mis datos</p>\n");
+      out.write("                <input class=\"input input-gray\" type=\"text\" name=\"id_cliente\" value=\" ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioC.id_cliente}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\" readonly>\n");
+      out.write("                <input class=\"input input-gray\" type=\"text\" name=\"apellido\" value=\"");
+//=p.getApellido()
+      out.write("\" readonly>\n");
+      out.write("                <input class=\"input input-gray\" type=\"text\" name=\"tipoDoc\" value=\"");
+//=p.getTipoDoc()
+      out.write("\" readonly>\n");
+      out.write("                <input class=\"input input-gray\" type=\"tel\" name=\"celular\" value=\"");
+//=p.getCelular()
+      out.write("\" readonly>\n");
+      out.write("                <input class=\"input input-gray\" type=\"email\" name=\"correo\" value=\"");
+//=p.getCorreo()
+      out.write("\" readonly>\n");
+      out.write("                <p>Usuario & Contraseña</p>\n");
+      out.write("                <input class=\"input input-pink-dark\" type=\"text\" name=\"usuario\" value=\"");
+//=p.getUsuario()
+      out.write("\" readonly>\n");
+      out.write("                <input class=\"input input-pink-dark\" type=\"password\" name=\"password\" value=\"");
+//=p.getUsuario()
+      out.write("\" readonly>\n");
+      out.write("                <input type=\"hidden\" name=\"opc\" value=\"#\">\n");
+      out.write("                <button type=\"submit\"  class=\"btn btn-white\" >Editar Perfil</button>\n");
       out.write("            </form>\n");
-      out.write("            <div class=\"msg-error\" role=\"alert\">");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${msje}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("</div>\n");
       out.write("        </section>\n");
       out.write("        \n");
       out.write("    </main>\n");
       out.write("</body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
+
+   }else{
+    response.sendRedirect("login_cliente.jsp");
+} 
+
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

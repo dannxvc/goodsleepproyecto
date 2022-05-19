@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="css/navAdmi.css">
     <link rel="stylesheet" href="css/clienteAdmi.css">
-    <title>Document</title>
+    <title>Listado de Clientes</title>
 </head>
 <body>
     <header>
@@ -31,7 +31,7 @@
                 <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
                 <li><a href=""><span><i class="fa-solid fa-bed"></i></span> Lista Habitaciones</a></li>
                 <li><a href=""><span><i class="fa-regular fa-pen-to-square"></i></span> Mantenimiento</a></li>
-                <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
+                <a href="uacontrol?accion=cerrar"><li><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</li></a>
         </nav>
     </header>
         <div class="modal-contenedor">

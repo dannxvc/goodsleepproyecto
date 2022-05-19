@@ -1,3 +1,9 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="modelo.Cliente"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+    if(session.getAttribute("usuarioC")!=null){  
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,36 +20,38 @@
 </head>
 <body id="yellow">
     <header id="header">
-        <a href="login_cliente.html" class="btn btn-login btn-logout">
+        <a href="uccontrol?accion=cerrar" class="btn btn-login btn-logout">
            <img class="login-icon" src="img/profile.svg" alt="log in">
            LOG OUT
         </a>
-        <h1>hola <%=usu%> !</h1>
+        <h1>hola, ${usuarioC.usuario} !!</h1>
     </header>
     <nav id="navbar">
-        <a href="perfil.html">
+        <a href="perfil.jsp">
             <img class="icon nav-icon icon-active"  src="img/yo.svg" alt="my profile">
         </a>
-        <a href="misreservas.html">
+        <a href="misreservas.jsp">
             <img class="icon nav-icon" src="img/mis-reser.svg" alt="my reservations">
         </a>
-        <a href="reservar.html">
+        <a href="reservar.jsp">
             <img class="icon nav-icon" src="img/reservar.svg" alt="book a room">
+        </a>
+        <a href="index.html">
+            <img class="icon nav-icon" src="img/home.svg" alt="inicio">
         </a>
     </nav>
     <main id="crear-cuenta">
         <section class="section-form">
             <form class="form form-crear-cuenta" action="control">
                 <p>Mis datos</p>
-                <input class="input input-gray" type="text" name="id_cliente" value="<%=p.getIdCliente()%>" readonly>
-                <input class="input input-gray" type="text" name="nombre" value="<%=p.getNombre()%>" readonly>
-                <input class="input input-gray" type="text" name="apellido" value="<%=p.getApellido()%>" readonly>
-                <input class="input input-gray" type="text" name="tipoDoc" value="<%=p.getTipoDoc()%>" readonly>
-                <input class="input input-gray" type="tel" name="celular" value="<%=p.getCelular()%>" readonly>
-                <input class="input input-gray" type="email" name="correo" value="<%=p.getCorreo()%>" readonly>
+                <input class="input input-gray" type="text" name="id_cliente" value=" ${usuarioC.id_cliente}" readonly>
+                <input class="input input-gray" type="text" name="apellido" value="<%//=p.getApellido()%>" readonly>
+                <input class="input input-gray" type="text" name="tipoDoc" value="<%//=p.getTipoDoc()%>" readonly>
+                <input class="input input-gray" type="tel" name="celular" value="<%//=p.getCelular()%>" readonly>
+                <input class="input input-gray" type="email" name="correo" value="<%//=p.getCorreo()%>" readonly>
                 <p>Usuario & Contraseña</p>
-                <input class="input input-pink-dark" type="text" name="usuario" value="<%=p.getUsuario()%>" readonly>
-                <input class="input input-pink-dark" type="password" name="password" value="<%=p.getUsuario()%>" readonly>
+                <input class="input input-pink-dark" type="text" name="usuario" value="${usuarioC.usuario}" readonly>
+                <input class="input input-pink-dark" type="password" name="password" value="${usuarioC.password}" readonly>
                 <input type="hidden" name="opc" value="#">
                 <button type="submit"  class="btn btn-white" >Editar Perfil</button>
             </form>
@@ -52,3 +60,8 @@
     </main>
 </body>
 </html>
+<%
+   }else{
+    response.sendRedirect("login_cliente.jsp");
+} 
+%>

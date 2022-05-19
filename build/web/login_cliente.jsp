@@ -31,17 +31,16 @@
         <section class="section-form section-form-login">
             <h2>Te damos la bienvenida!</h2>
             <p class="p-pink">Ingresa con tu usuario y password para poder reservar tu habitacion!</p>
-            <form class="form form-login form-login-cliente" action="uccontrol" method="post">
+            <form class="form form-login form-login-cliente" action="uccontrol?accion=verificar" method="post">
                 <input class="input input-gray" type="text" placeholder="Usuario" name="usuario" required>
                 <input class="input input-gray" type="password" placeholder="Password" name="password" required>
-                <input type="submit" class="btn btn-pink" name="btn" value="INICIAR SESION">
-                <input type="hidden" class="btn btn-pink" name="op" value="login">
+                <input type="submit" class="btn btn-pink" name="verificar" value="INICIAR SESION">
             </form>
             
-            <a class="btn btn-white" href="crear_cuenta.html">NO TIENES CUENTA? CREATE UNA</a>
+            <a class="btn btn-white" href="crear_cuenta.jsp">NO TIENES CUENTA? CREATE UNA</a>
            <%
-                    if(request.getAttribute("msq")!=null){
-                        String msg=request.getAttribute("msq").toString();
+                    if(request.getAttribute("msje")!=null){
+                        String msg=request.getAttribute("msje").toString();
            %>
                  <div class="msg-error" role="alert"><%=msg%></div>
             <%
