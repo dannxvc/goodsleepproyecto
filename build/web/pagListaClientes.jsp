@@ -1,3 +1,4 @@
+<%@page import="dao.reservaDAO"%>
 <%@page import="modelo.Cliente"%>
 <%@page import="dao.listadoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,9 +17,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/navAdmi.css">
     <link rel="stylesheet" href="css/clienteAdmi.css">
-    <title>Listado de Clientes</title>
+    <title>Document</title>
 </head>
 <body>
     <header>
@@ -31,18 +33,24 @@
                 <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
                 <li><a href=""><span><i class="fa-solid fa-bed"></i></span> Lista Habitaciones</a></li>
                 <li><a href=""><span><i class="fa-regular fa-pen-to-square"></i></span> Mantenimiento</a></li>
-                <a href="uacontrol?accion=cerrar"><li><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</li></a>
+                <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
         </nav>
     </header>
-        <div class="modal-contenedor">
-            <div class="modal-formulario">
-                <button id="boton-cerrar"><i class="fas fa-times-circle"></i></button>
-                <h3>Registrar Cliente :</h3>
-                <form id="form" action="svReserva">
+        
+            
+        <div class="modal fade" id="exampleModalRegistro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-light">
+              <h5 class="modal-title" id="exampleModalLabel">Registrar</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="formListadoCliente" id="form" action="svReserva">
                     <input type="hidden" name="opc" value="1">
                     <div class="col-md-12 mt-1">
                         <label for="" class="form-label">Tipo de documento :</label>
-                        <input type="text" class="form-control" id="" name="documento">
+                        <input type="text" class="form-control" id="txt_id" name="documento">
                     </div>
                     <div class="col-md-12 mt-3">
                         <label for="" class="form-label">N° de documento :</label>
@@ -64,18 +72,20 @@
                         <label for="inputEmail4" class="form-label">Email</label>
                         <input type="email" class="form-control" id="inputEmail4" name="email">
                     </div>
-                    <div class="col-md-12 d-flex justify-content-center mt-1">
-                        <button type="submit" class="btn btn-primary col-md-4">Registrar</button>
+                    <div class="col-md-12 d-flex justify-content-center mt-3">
+                        <button type="submit" class="btn btn-primary  col-md-4">Registrar</button>
                     </div>
                 </form>
             </div>
+          </div>
         </div>
-    
+      </div>
+            
     <main>
         <h2 class="text-center mt-5">Lista de Clientes</h2>
 
         <div class="barraCliente mt-4">
-            <button type="button" class="btn btn-success " id="boton-agregar">Agregar +</button>
+            <button type="button" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#exampleModalRegistro" id="boton-agregar">Agregar +</button>
         </div>
         
         <%
@@ -84,17 +94,19 @@
         
         <table class="table table-hover text-center mt-3">
             <thead class="bg-dark text-white text-center">
-                <th>ID Cliente<th>Tipo de Documento<th>Nombres<th>Apellidos<th>Celular<th>Correo<th>Editar</th><th>Eliminar</th>
+                <th>ID Cliente<th>Tipo de Documento<th>Nombres<th>Apellidos<th>Celular<th>Correo<th></th><th></th>
             </thead>     
             <%
                 for(Cliente x:obj.lisCliente()){
-                    out.print("<tr><td>"+x.getId_cliente()+"<td>"+x.getTipoDoc()+"<td>"+x.getNombre()+"<td>"+x.getApellido()+"<td>"+x.getCelular()+"<td>"+x.getCorreo());  
+                    out.print(" <tr><td>"+x.getId_cliente()+"<td>"+x.getTipoDoc()+"<td>"+x.getNombre()+"<td>"+x.getApellido()+"<td>"+x.getCelular()+"<td>"+x.getCorreo());  
+            %>        
+                <td><a href="svReserva?opc=3&cod=<%=x.getId_cliente()%>"  class="enlaceEdit">editar</a></td>
+                <td><a href="svReserva?opc=2&cod=<%=x.getId_cliente()%>"  class="enlaceDelete">eliminar</a></td>
+            <%
                 }
             %>
-            
         </table>
     </main>
-    <script src="js/modal.js"></script>
 </body>
 </html>
 <%

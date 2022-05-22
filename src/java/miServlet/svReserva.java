@@ -19,6 +19,9 @@ public class svReserva extends HttpServlet {
             throws ServletException, IOException {     
         int op=Integer.parseInt(request.getParameter("opc"));
         if(op==1)adicionCliente(request,response);
+        if(op==2)eliminarCliente(request,response);
+        if(op==3)consultaCliente(request,response);
+        if(op==4)modificarCliente(request,response);
     }
     
     protected void adicionCliente(HttpServletRequest request, HttpServletResponse response)
@@ -35,7 +38,40 @@ public class svReserva extends HttpServlet {
         request.getRequestDispatcher(pag).forward(request, response);
  }
     
+    
+    protected void eliminarCliente(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
 
+        int nro=Integer.parseInt(request.getParameter("cod"));
+        obj.eliminarCliente(nro);
+        String pag="/pagListaClientes.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
+ }
+    
+    
+    protected void consultaCliente(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        int nro=Integer.parseInt(request.getParameter("cod"));
+        Cliente c=obj.consultaCliente(nro);
+        request.setAttribute("dato", c);
+        String pag="/pagEditarCliente.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
+ }
+    
+    protected void modificarCliente(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        Cliente c=new Cliente();
+            c.setId_cliente(Integer.parseInt(request.getParameter("idcliente")));
+            c.setTipoDoc(request.getParameter("documento"));
+            c.setNombre(request.getParameter("nombre"));
+            c.setApellido(request.getParameter("apellido"));
+            c.setCelular(request.getParameter("telefono"));
+            c.setCorreo(request.getParameter("email"));
+            obj.editarCliente(c);
+        String pag="/pagListaClientes.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
+ }
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

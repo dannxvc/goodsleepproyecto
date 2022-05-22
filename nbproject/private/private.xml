@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/web/pagListaClientes.jsp</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/miServlet/uccontrol.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/src/java/modelo/usuarioCliente.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/NetBeansProjects/GoodSleepProyecto/web/perfil.jsp</file>
+            <file>file:/C:/Users/Alonso%20NH/Desktop/Netbeans/Desarrollo%20Web%20Integrado/goodsleepproyecto/src/java/dao/reservaDAO.java</file>
+            <file>file:/C:/Users/Alonso%20NH/Desktop/Netbeans/Desarrollo%20Web%20Integrado/goodsleepproyecto/web/pagListaClientes.jsp</file>
+            <file>file:/C:/Users/Alonso%20NH/Desktop/Netbeans/Desarrollo%20Web%20Integrado/goodsleepproyecto/web/pagEditarCliente.jsp</file>
+            <file>file:/C:/Users/Alonso%20NH/Desktop/Netbeans/Desarrollo%20Web%20Integrado/goodsleepproyecto/src/java/miServlet/svReserva.java</file>
         </group>
     </open-files>
 </project-private>

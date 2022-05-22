@@ -45,7 +45,6 @@
                 }
              %>
         </section>
-        
     </main>
 </body>
 </html>
