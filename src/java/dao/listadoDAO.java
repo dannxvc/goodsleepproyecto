@@ -1,7 +1,5 @@
 
 package dao;
-
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +23,7 @@ public class listadoDAO {
                 c.setCodCategoria(rs.getString(1));                
                 c.setNombreCat(rs.getString(2));
                 c.setDescripcion(rs.getString(3));
-                c.setPrecio(rs.getString(4));
+                c.setPrecio(rs.getDouble(4));
                 lis.add(c);
             }
         }catch(Exception ex){
@@ -69,7 +67,7 @@ public class listadoDAO {
                 Servicio_Adicional sa=new Servicio_Adicional();
                 sa.setCod_servA(rs.getString(1));                
                 sa.setDescripcion(rs.getString(2));
-                sa.setPrecio(rs.getString(3));
+                sa.setPrecio(rs.getDouble(3));
                 lis.add(sa);
             }
         }catch(Exception ex){
@@ -77,4 +75,57 @@ public class listadoDAO {
         }
         return lis;
     }    
+    
+   public List<Habitacion> lisHabitacion(String id){
+       List<Habitacion> lis=new ArrayList();
+       Connection cn=MySQLConexion.getConexion();
+       try{
+           String sql="select codHabitacion, codCategoria, piso, id_empresa, estado from habitacion where codCategoria=?";
+           //String sql="select nombreCat, categoria.codCategoria,codHabitacion, piso, id_empresa, estado from habitacion join categoria on habitacion.codCategoria=categoria.codCategoria";
+           PreparedStatement st=cn.prepareStatement(sql);
+           st.setString(1, id);
+           ResultSet rs=st.executeQuery();
+           while(rs.next()){
+                Habitacion h=new Habitacion();
+                h.setCodHabitacion(rs.getString(1));
+                h.setCatcategoria(rs.getString(2));
+                h.setPiso(rs.getString(3));
+                h.setId_empresa(rs.getString(4));
+                h.setEstado(rs.getString(5));
+                lis.add(h);
+            }
+       }catch(Exception ex){
+           ex.printStackTrace();
+       }
+       return lis;
+   }
+   
+        public List<Consulta> lisConsulta(){
+        List<Consulta> lis = new ArrayList();
+        Connection cn =MySQLConexion.getConexion();
+        try{
+            String sql="select categoria.codCategoria, categoria.nombreCat, categoria.descripcion, categoria.precio, habitacion.codHabitacion, habitacion.piso , habitacion.estado from categoria JOIN habitacion ON habitacion.codCategoria=categoria.codCategoria WHERE habitacion.estado='DISPONIBLE'";
+            PreparedStatement st=cn.prepareStatement(sql);
+            ResultSet rs=st.executeQuery();
+            while(rs.next()){
+                Consulta c=new Consulta();
+                c.setCodCategoria(rs.getString(1));
+                c.setNombreCategoria(rs.getString(2));
+                c.setDescripcionCategoria(rs.getString(3));
+                c.setPrecioCategoria(rs.getDouble(4));
+                c.setCodHabitacion(rs.getString(5));
+                c.setPiso(rs.getInt(6));
+                c.setEstado(rs.getString(7));
+                lis.add(c);
+            }
+        }catch(Exception ex){
+         ex.printStackTrace();
+        }
+        return lis;
+        }
+    
+    
+   
+   
+   
 }

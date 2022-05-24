@@ -6,23 +6,15 @@ public class Categoria {
     private String codCategoria;
     private String nombreCat;
     private String descripcion;
-    private String precio;
+    private double precio;
 
     public Categoria() {
     }
 
-    public Categoria(String codCategoria, String nombreCat, String descripcion, String precio) {
+    public Categoria(String codCategoria, String nombreCat, String descripcion, double precio) {
         this.codCategoria = codCategoria;
         this.nombreCat = nombreCat;
         this.descripcion = descripcion;
-        this.precio = precio;
-    }
-
-    public String getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(String precio) {
         this.precio = precio;
     }
 
@@ -48,6 +40,14 @@ public class Categoria {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
     

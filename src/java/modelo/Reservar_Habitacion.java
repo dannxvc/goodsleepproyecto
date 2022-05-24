@@ -30,6 +30,15 @@ public class Reservar_Habitacion{
         this.estado = estado;
     }
 
+    public double pagoTotal(){
+        return subtotal+precioTotal;
+    }
+    
+    public int numeroDias(){
+        int dias=(int) ((fechaFinal.getTime()-fechaInicio.getTime())/86400000);
+        return dias;
+    }
+    
     public String getEstado() {
         return estado;
     }
