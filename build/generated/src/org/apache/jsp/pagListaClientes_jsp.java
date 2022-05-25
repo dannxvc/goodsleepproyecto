@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import modelo.Reservar_Habitacion;
 import dao.reservaDAO;
 import modelo.Cliente;
 import dao.listadoDAO;
@@ -49,6 +50,7 @@ public final class pagListaClientes_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
 
     if(session.getAttribute("usuarioA")!=null){  
 
@@ -67,7 +69,7 @@ public final class pagListaClientes_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"css/navAdmi.css\">\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"css/clienteAdmi.css\">\r\n");
-      out.write("    <title>Document</title>\r\n");
+      out.write("    <title>Listado Clientes</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("    <header>\r\n");
@@ -80,10 +82,11 @@ public final class pagListaClientes_jsp extends org.apache.jasper.runtime.HttpJs
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioA.usuario}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("!</p>\r\n");
       out.write("            </div>\r\n");
-      out.write("                <li><a href=\"\"><span><i class=\"fa-regular fa-address-card\"></i></span> Registro</a></li>\r\n");
+      out.write("                <li><a href=\"pagReservaAdmi.jsp\"><span><i class=\"fa-regular fa-address-card\"></i></span> Registro</a></li>\r\n");
       out.write("                <li><a href=\"pagListaClientes.jsp\"><span><i class=\"fa-solid fa-user\"></i></span> Clientes</a></li>\r\n");
-      out.write("                <li><a href=\"\"><span><i class=\"fa-solid fa-bed\"></i></span> Lista Habitaciones</a></li>\r\n");
-      out.write("                <li><a href=\"\"><span><i class=\"fa-regular fa-pen-to-square\"></i></span> Mantenimiento</a></li>\r\n");
+      out.write("                <li><a href=\"pagListaReservas.jsp\"><span><i class=\"fa-solid fa-bed\"></i></span> Lista Habitaciones</a></li>\r\n");
+      out.write("                <li><a href=\"#\"><span><i class=\"fa-regular fa-pen-to-square\"></i></span> Mantenimiento</a></li>\r\n");
+      out.write("                \r\n");
       out.write("                <li><a href=\"uacontrol?accion=cerrar\"><span><i class=\"fa-solid fa-right-from-bracket\"></i></span> Cerrar sesion</a></li>\r\n");
       out.write("        </nav>\r\n");
       out.write("    </header>\r\n");

@@ -11,7 +11,7 @@ import util.MySQLConexion;
 
 public class reservaDAO {
     
-    public void reservaHabitacion(Reservar_Habitacion r){
+    public void reservaHabitacion(Reservar_Habitacion r, Habitacion h){
         try {
             Connection cn=MySQLConexion.getConexion();
             String sql="{call spAddReserva(?,?,?,?,?,?,?,?,?)}";
@@ -25,10 +25,31 @@ public class reservaDAO {
             st.setInt(7, r.getCant_personas());
             st.setDouble(8, r.getPrecioTotal());
             st.setString(9, r.getEstado());
+            String sql2="update habitacion set estado=?  where codHabitacion=?"; 
+            PreparedStatement st2=cn.prepareStatement(sql2);
+            st2.setString(1, h.getEstado());
+            st2.setString(2, h.getCodHabitacion());
             st.executeUpdate();
+            st2.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+    }
+    
+    public void eliminarReserva(String id, String id2){
+     try{ 
+        Connection cn=MySQLConexion.getConexion(); 
+        String sql="delete from reservahabitacion where id_reserva=?"; 
+        PreparedStatement st=cn.prepareStatement(sql); 
+        String sql2="update habitacion set estado='DISPONIBLE' where codHabitacion=?"; 
+        PreparedStatement st2=cn.prepareStatement(sql2);
+        st.setString(1, id);
+        st2.setString(1, id2);
+        st.executeUpdate(); 
+        st2.executeUpdate(); 
+      }catch(Exception ex){ 
+          ex.printStackTrace(); 
+      }        
     }
     
     

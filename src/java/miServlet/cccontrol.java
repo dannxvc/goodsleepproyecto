@@ -29,8 +29,6 @@ crearCuentaDAO obj=new crearCuentaDAO();
        obj.crearCuenta(a,u);
       String pag="/crear_cuenta.jsp";
       request.getRequestDispatcher(pag).forward(request, response);
-        
-    
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

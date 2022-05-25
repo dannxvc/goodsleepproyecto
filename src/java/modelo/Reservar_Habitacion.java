@@ -30,21 +30,10 @@ public class Reservar_Habitacion{
         this.estado = estado;
     }
 
-    public double pagoTotal(){
-        return subtotal+precioTotal;
-    }
     
     public int numeroDias(){
         int dias=(int) ((fechaFinal.getTime()-fechaInicio.getTime())/86400000);
         return dias;
-    }
-    
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 
     public String getId_reserva() {
@@ -61,6 +50,22 @@ public class Reservar_Habitacion{
 
     public void setId_cliente(int id_cliente) {
         this.id_cliente = id_cliente;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    public Date getFechaFinal() {
+        return fechaFinal;
+    }
+
+    public void setFechaFinal(Date fechaFinal) {
+        this.fechaFinal = fechaFinal;
     }
 
     public String getCodHabita() {
@@ -103,24 +108,14 @@ public class Reservar_Habitacion{
         this.precioTotal = precioTotal;
     }
 
-    public Date getFechaInicio() {
-        return fechaInicio;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
+    
+    
 
-    public Date getFechaFinal() {
-        return fechaFinal;
-    }
-
-    public void setFechaFinal(Date fechaFinal) {
-        this.fechaFinal = fechaFinal;
-    }
-
-    
-    
-    
-    
 }

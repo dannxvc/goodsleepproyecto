@@ -23,10 +23,10 @@
                 <img src="img/admi/${usuarioA.usuario}.svg" alt="">
                 <p> Hola, ${usuarioA.usuario}!</p>
             </div>
-                <li><a href=""><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
+                <li><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
                 <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
-                <li><a href=""><span><i class="fa-solid fa-bed"></i></span> Lista Habitaciones</a></li>
-                <li><a href=""><span><i class="fa-regular fa-pen-to-square"></i></span> Mantenimiento</a></li>
+                <li><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>
+                <li><a href="pagHabitaciones"><span><i class="fa-regular fa-pen-to-square"></i></span> Habitaciones</a></li>
                 <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
         </nav>
     </header>

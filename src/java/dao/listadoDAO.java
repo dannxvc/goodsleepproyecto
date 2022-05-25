@@ -1,5 +1,6 @@
 
 package dao;
+import java.util.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -76,14 +77,13 @@ public class listadoDAO {
         return lis;
     }    
     
-   public List<Habitacion> lisHabitacion(String id){
+   public List<Habitacion> lisHabitacion(){
        List<Habitacion> lis=new ArrayList();
        Connection cn=MySQLConexion.getConexion();
        try{
-           String sql="select codHabitacion, codCategoria, piso, id_empresa, estado from habitacion where codCategoria=?";
-           //String sql="select nombreCat, categoria.codCategoria,codHabitacion, piso, id_empresa, estado from habitacion join categoria on habitacion.codCategoria=categoria.codCategoria";
+           String sql="select codHabitacion, codCategoria, piso, id_empresa, estado from habitacion";
+            //String sql="select nombreCat, categoria.codCategoria,codHabitacion, piso, id_empresa, estado from habitacion join categoria on habitacion.codCategoria=categoria.codCategoria";
            PreparedStatement st=cn.prepareStatement(sql);
-           st.setString(1, id);
            ResultSet rs=st.executeQuery();
            while(rs.next()){
                 Habitacion h=new Habitacion();
@@ -123,9 +123,32 @@ public class listadoDAO {
         }
         return lis;
         }
-    
-    
-   
-   
-   
+        
+        public List<Reservar_Habitacion> lisReservas(){
+        List<Reservar_Habitacion> lis = new ArrayList();
+        Connection cn =MySQLConexion.getConexion();
+        try{
+            String sql="select id_reserva, id_cliente, fechaInicio, fechaFinal, codHabitacion, subTotal, codservA, cant_personas, precioTotal, estado from reservahabitacion";
+            PreparedStatement st=cn.prepareStatement(sql);
+            ResultSet rs=st.executeQuery();
+            while(rs.next()){
+                Reservar_Habitacion rev=new Reservar_Habitacion();
+                rev.setId_reserva(rs.getString(1));
+                rev.setId_cliente(rs.getInt(2));
+                rev.setFechaInicio(rs.getDate(3));
+                rev.setFechaFinal(rs.getDate(4));
+                rev.setCodHabita(rs.getString(5));
+                rev.setSubtotal(rs.getDouble(6));
+                rev.setCod_servA(rs.getString(7));
+                rev.setCant_personas(rs.getInt(8));
+                rev.setPrecioTotal(rs.getDouble(9));
+                rev.setEstado(rs.getString(10));
+                lis.add(rev);
+            }
+        }catch(Exception ex){
+         ex.printStackTrace();
+        }
+        return lis;
+    }
+
 }

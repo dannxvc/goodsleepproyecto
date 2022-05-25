@@ -27,10 +27,10 @@
                 <img src="img/admi/${usuarioA.usuario}.svg" alt="">
                 <p> Hola, ${usuarioA.usuario}!</p>
             </div>
-                <li><a href="#"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
+                <li><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
                 <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
-                <li><a href="#"><span><i class="fa-solid fa-bed"></i></span> Lista Habitaciones</a></li>
-                <li><a href="#"><span><i class="fa-regular fa-pen-to-square"></i></span> Mantenimiento</a></li>
+                <li><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Lista Reservas</a></li>
+                <li><a href="pagHabitaciones.jsp"><span><i class="fa-regular fa-pen-to-square"></i></span> Habitaciones</a></li>
                 <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
         </nav>
     </header>
@@ -55,31 +55,22 @@
                     </select>
                 </div>
 
-                <div class="col-md-6">
-                    <label for="" class="form-label">Categoria de la habitacion :</label>
-                    <select type="button" class="form-select"  name="categoriah" data-bs-toggle="dropdown"  id="categoria">
-                        <option class="dropdown-item" disabled selected>Elegir</option>
-                            <%      
-                            for(Categoria x:obj.lisCategoria()){
-                                    out.print("<option value="+x.getCodCategoria()+" data-precioh="+x.getPrecio()+" data-code="+x.getCodCategoria()+"  selected>"+x.getNombreCat());
-                              }
-                              %>
-                    </select>
-                </div>                    
-                 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <label for="" class="form-label">Habitacion :</label>
-                    <select class="form-select" data-bs-toggle="dropdown" value="" name="habitacion" id="habitacion">
+                    <select class="form-select" data-bs-toggle="dropdown" value="" name="habitacion" id="categoria">
                         <option disabled selected>Elegir habitacion</option>
                            <%
                                for(Consulta c:obj.lisConsulta()){
                                    String dato=c.getCodHabitacion()+" - "+c.getNombreCategoria();
-                                   out.print("<option value="+c.getCodHabitacion()+">"+dato);
+                                   out.print("<option value="+c.getCodHabitacion()+" data-precioh="+c.getPrecioCategoria()+" data-codigohab="+c.getCodHabitacion()+" >"+dato);
                                }                           
                            %>
                     </select>
                 </div>
              
+              <input type="hidden" name="codupdateh" id="codupdateh" value="OCUPADO">
+              <input type="hidden" name="updateh" id="updateh" value="">
+                    
                <div class="col-md-6">
                     <label for="" class="form-label">Servicio adicional :</label>
                     <select class="form-select" name="servicioad" value="" id="servicio" >
@@ -149,6 +140,11 @@
                     let precio = $(this).find(':selected').attr('data-precioh');
                     $('#subtotal').val(precio);
              });
+             
+             $('#categoria').on('change',function(){
+                 let estado=$(this).find(':selected').attr('data-codigohab');
+                 $('#updateh').val(estado);
+             })
              
              
              $('#servicio').on('change',function() {       

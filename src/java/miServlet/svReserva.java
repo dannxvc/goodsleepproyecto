@@ -23,11 +23,13 @@ public class svReserva extends HttpServlet {
         if(op==3)consultaCliente(request,response);
         if(op==4)modificarCliente(request,response);
         if(op==5)Reserva(request,response);
+        if(op==6)eliminarReserva(request,response);
     }
     
      protected void Reserva(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
         Reservar_Habitacion rev=new Reservar_Habitacion();
+        Habitacion h=new Habitacion();
             rev.setId_cliente(Integer.parseInt(request.getParameter("idcliente")));
             rev.setFechaInicio(Date.valueOf(request.getParameter("fcheckin")));
             rev.setFechaFinal(Date.valueOf(request.getParameter("fcheckout")));
@@ -37,9 +39,20 @@ public class svReserva extends HttpServlet {
             rev.setCant_personas(Integer.parseInt(request.getParameter("npersonas")));
             rev.setPrecioTotal(Double.parseDouble(request.getParameter("monto")));
             rev.setEstado(request.getParameter("estadoh"));
-           obj.reservaHabitacion(rev);
-            String pag="/pagListaClientes.jsp";
+            h.setEstado(request.getParameter("codupdateh"));
+            h.setCodHabitacion(request.getParameter("updateh"));
+           obj.reservaHabitacion(rev,h);
+            String pag="/pagListaReservas.jsp";
             request.getRequestDispatcher(pag).forward(request, response);
+ }
+     protected void eliminarReserva(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+
+        String nro1=request.getParameter("cod");
+        String nro2=request.getParameter("cod2");
+        obj.eliminarReserva(nro1, nro2);
+        String pag="/pagListaReservas.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);
  }
     
     

@@ -1,3 +1,4 @@
+<%@page import="modelo.Reservar_Habitacion"%>
 <%@page import="dao.reservaDAO"%>
 <%@page import="modelo.Cliente"%>
 <%@page import="dao.listadoDAO"%>
@@ -20,7 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/navAdmi.css">
     <link rel="stylesheet" href="css/clienteAdmi.css">
-    <title>Document</title>
+    <title>Listado Clientes</title>
 </head>
 <body>
     <header>
@@ -31,8 +32,8 @@
             </div>
                 <li><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
                 <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
-                <li><a href=""><span><i class="fa-solid fa-bed"></i></span> Lista Habitaciones</a></li>
-                <li><a href=""><span><i class="fa-regular fa-pen-to-square"></i></span> Mantenimiento</a></li>
+                <li><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>
+                <li><a href="pagHabitaciones.jsp"><span><i class="fa-regular fa-pen-to-square"></i></span> Habitaciones</a></li>
                 <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
         </nav>
     </header>
@@ -80,7 +81,6 @@
           </div>
         </div>
       </div>
-            
     <main>
         <h2 class="text-center mt-5">Lista de Clientes</h2>
 
