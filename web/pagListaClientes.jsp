@@ -21,20 +21,43 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/navAdmi.css">
     <link rel="stylesheet" href="css/clienteAdmi.css">
+    
+    <script defer src="js/menu.js"></script>
     <title>Listado Clientes</title>
 </head>
 <body>
     <header>
-        <nav>
+       <!-- <nav>
             <div class="infoUsuario">
-                <img src="img/admi/${usuarioA.usuario}.svg" alt="">
-                <p> Hola, ${usuarioA.usuario}!</p>
+                <img src="img/admi/$//{usuarioA.usuario}.svg" alt="">
+                <p> Hola, $//{usuarioA.usuario}!</p>
             </div>
                 <li><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
                 <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
                 <li><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>
                 <li><a href="pagHabitaciones.jsp"><span><i class="fa-regular fa-pen-to-square"></i></span> Habitaciones</a></li>
                 <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
+        </nav>-->
+            
+        <nav id="navbaradmi">
+            <div class="infoUsuario">
+                <img src="img/admi/${usuarioA.usuario}.svg" alt="">
+                <p> Hola, ${usuarioA.id_admi.nombre}!</p>
+            </div>
+            <ul>
+                <li><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
+                <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
+                <li><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>
+                <div id="mantenimiento">
+                    <li id="flecha_abajo"><span><i class="fa-regular fa-pen-to-square"></i></span>Mantenimiento</li>
+                    <ul>
+                        <li><a href="pagListaCategoria.jsp">Categorias</a></li>               
+                        <li><a href="pagListaServicioAd.jsp">Servicios Adicionales</a></li>
+                        <li><a href="pagHabitaciones.jsp"><span><i class="fa-regular fa-pen-to-square"></i></span> Habitaciones</a></li>
+                    </ul>
+                </div>
+                <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
+            </ul>
         </nav>
     </header>
         

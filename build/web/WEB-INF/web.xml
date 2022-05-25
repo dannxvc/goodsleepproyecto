@@ -28,6 +28,10 @@
         <servlet-name>cccontrol</servlet-name>
         <servlet-class>miServlet.cccontrol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>clientecontrol</servlet-name>
+        <servlet-class>miServlet.clientecontrol</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UCcontrol</servlet-name>
         <url-pattern>/UCcontrol</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>cccontrol</servlet-name>
         <url-pattern>/cccontrol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>clientecontrol</servlet-name>
+        <url-pattern>/clientecontrol</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

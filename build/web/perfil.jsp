@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="modelo.Cliente"%>
+<%@page import="modelo.*"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
     if(session.getAttribute("usuarioC")!=null){  
@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/img/logo.png" type="image/png">
@@ -42,23 +42,36 @@
     </nav>
     <main id="crear-cuenta">
         <section class="section-form">
-            <form class="form form-crear-cuenta" action="control">
+           <form class="form form-crear-cuenta" ><!--action="control"-->
                 <p>Mis datos</p>
-                <input class="input input-gray" type="text" name="id_cliente" value=" ${usuarioC.id_cliente}" readonly>
-                <input class="input input-gray" type="text" name="apellido" value="<%//=p.getApellido()%>" readonly>
-                <input class="input input-gray" type="text" name="tipoDoc" value="<%//=p.getTipoDoc()%>" readonly>
-                <input class="input input-gray" type="tel" name="celular" value="<%//=p.getCelular()%>" readonly>
-                <input class="input input-gray" type="email" name="correo" value="<%//=p.getCorreo()%>" readonly>
+                <input class="input input-gray" type="text" name="id_cliente" value="${usuarioC.id_cliente.id_cliente}" readonly>
+                <input class="input input-gray" type="text" name="nombre" value="${usuarioC.id_cliente.nombre}" readonly>                
+                <input class="input input-gray" type="text" name="apellido" value="${usuarioC.id_cliente.apellido}" readonly>
+                <input class="input input-gray" type="text" name="tipoDoc" value="${usuarioC.id_cliente.tipoDoc}" readonly>
+                <input class="input input-gray" type="tel" name="celular" value="${usuarioC.id_cliente.celular}" readonly>
+                <input class="input input-gray" type="email" name="correo" value="${usuarioC.id_cliente.correo}" readonly>
+                
+                
+                
                 <p>Usuario & Contraseña</p>
                 <input class="input input-pink-dark" type="text" name="usuario" value="${usuarioC.usuario}" readonly>
                 <input class="input input-pink-dark" type="password" name="password" value="${usuarioC.password}" readonly>
-                <input type="hidden" name="opc" value="#">
-                <button type="submit"  class="btn btn-white" >Editar Perfil</button>
+                <a href="javascript:editarPerfil('${usuarioC.id_cliente.id_cliente}','${usuarioC.id_cliente.tipoDoc}',
+                   '${usuarioC.id_cliente.nombre}','${usuarioC.id_cliente.apellido}',
+                    '${usuarioC.id_cliente.celular}', '${usuarioC.id_cliente.correo}');" class="btn btn-white"> Editar Perfil</a>
             </form>
         </section>
         
     </main>
 </body>
+ <script> 
+       function editarPerfil(codc,tipodoc,nom,ape,cel,correo){ 
+        //window.alert(prec); 
+      //  alert(prod); 
+       location="clientecontrol?opc=1&cod="+codc; 
+      //  window.parent.recibeSeleccion(codp,prod,prec);        
+    } 
+    </script> 
 </html>
 <%
    }else{
