@@ -40,11 +40,13 @@
             </ul>
         </nav>
     </header>
+            
+            <%
+                  listadoDAO obj=new listadoDAO(); 
+             %>
+            
             <main>
                 <h2 class="text-center mt-5">Lista de Reservas</h2>     
-                <%
-                  listadoDAO obj=new listadoDAO(); 
-                %>
                 <table class="table table-hover text-center mt-3">
                     <thead class="bg-dark text-white text-center">
                         <th>ID Reserva<th>ID Cliente<th>Fecha Inicio<th>Fecha Final<th># dias<th>ID Habitacion<th>Subtotal<th>ID Servicio<th>N° Personas<th>TOTAL<th>Estado<th></th>

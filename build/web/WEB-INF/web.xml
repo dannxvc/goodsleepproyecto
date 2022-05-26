@@ -32,6 +32,10 @@
         <servlet-name>clientecontrol</servlet-name>
         <servlet-class>miServlet.clientecontrol</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>svMantenimiento</servlet-name>
+        <servlet-class>miServlet.svMantenimiento</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>UCcontrol</servlet-name>
         <url-pattern>/UCcontrol</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>clientecontrol</servlet-name>
         <url-pattern>/clientecontrol</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>svMantenimiento</servlet-name>
+        <url-pattern>/svMantenimiento</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
