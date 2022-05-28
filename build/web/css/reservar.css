@@ -7,6 +7,14 @@
     border-radius: 0.25rem;
     box-shadow: 8px 8px 15px rgba(0,0,0,0.19);
 }
+
+.form-col-filtrar{
+    min-height: 0px;
+    padding:0px;    
+    background-color: var(--white);
+    text-align: center;
+    margin:1rem 0 1rem 0;
+}
 .label-col{
     display: flex;
     flex-direction: column;
@@ -15,9 +23,9 @@
 }
 .label-grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 0.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
     align-items: center;
     color: var(--white);
 }
@@ -39,3 +47,6 @@ input[type=radio]{
     top: 0;
     opacity: 0.2;
 } 
+.btn-reservar{
+    margin-top:1rem;
+}

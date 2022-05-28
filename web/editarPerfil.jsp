@@ -62,10 +62,7 @@
                 <input class="input input-gray" type="tel" name="celular" value="<%=c.getCelular()%>">
                 <input class="input input-gray" type="email" name="correo" value="<%=c.getCorreo()%>">
               
-                <p>Usuario & Contraseña</p>
-                <input class="input input-pink-dark" type="text" name="usuario" value="${usuarioC.usuario}" readonly>
-                <input class="input input-pink-dark" type="password" name="password" value="${usuarioC.password}">
-                
+              
                 <button type="submit" class="btn btn-white" >Guardar Cambios</button>
             </form>
         </section>

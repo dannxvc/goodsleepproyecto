@@ -65,8 +65,10 @@ public final class reservar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap\" rel=\"stylesheet\">\r\n");
       out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap\" rel=\"stylesheet\">\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"css/index.css\">\r\n");
-      out.write("       <script  src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\r\n");
-      out.write("  <script src=\"js/jquery-1.10.2.min.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("    <script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("    <script  src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\r\n");
+      out.write("    <script src=\"js/jquery-1.10.2.min.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("    <script src=\"js/filtrarHab.js\" type=\"text/javascript\"></script>\r\n");
       out.write("    <title>Good Sleep | Reservar</title>\r\n");
       out.write("</head>\r\n");
       out.write("<body id=\"yellow\">\r\n");
@@ -110,7 +112,7 @@ public final class reservar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("               \r\n");
       out.write("               \r\n");
       out.write("                <select class=\"input input-gray\" data-bs-toggle=\"dropdown\" value=\"\" name=\"habitacion\" id=\"categoria\" required>\r\n");
-      out.write("                           <option disabled selected>Elegir habitacion</option>\r\n");
+      out.write("                           <option disabled value selected>Elegir habitacion</option>\r\n");
       out.write("                            ");
 
                                 for (Consulta c : obj.lisConsulta()) {
@@ -120,13 +122,16 @@ public final class reservar_jsp extends org.apache.jasper.runtime.HttpJspBase
                             
       out.write("\r\n");
       out.write("                </select>\r\n");
-      out.write("                <div></div>\r\n");
+      out.write("                <div class=\"form-col form-col-filtrar\" id=\"filtrar_hab\">\r\n");
+      out.write("                    \r\n");
+      out.write("                    \r\n");
+      out.write("                </div>\r\n");
       out.write("                <input type=\"hidden\" name=\"codupdateh\" id=\"codupdateh\" value=\"OCUPADO\">\r\n");
       out.write("                    <input type=\"hidden\" name=\"updateh\" id=\"updateh\" value=\"\">\r\n");
       out.write("                \r\n");
       out.write("                       \r\n");
       out.write("                <select class=\"input input-gray\"  name=\"servicioad\" id=\"servicio\" required>\r\n");
-      out.write("                            <option disabled selected>Elegir Servicio Adicional</option>\r\n");
+      out.write("                            <option disabled value selected>Elegir Servicio Adicional</option>\r\n");
       out.write("                            ");
 
                                 for (Servicio_Adicional x : obj.lisServicioAdicional()) {
@@ -135,8 +140,19 @@ public final class reservar_jsp extends org.apache.jasper.runtime.HttpJspBase
                             
       out.write("\r\n");
       out.write("                </select>\r\n");
-      out.write("                <div class=\"form-col\">\r\n");
-      out.write("                    <label class=\"label-col label-grid\">Cantidad Personas\r\n");
+      out.write("                 <div class=\"label-grid label-grid-two\">\r\n");
+      out.write("                    <label class=\"label-col\" for=\"fcheckin\">Fecha Inicial\r\n");
+      out.write("                        <input class=\"input input-gray\" type=\"date\" id=\"fcheckin\" name=\"fcheckin\" value=\"\" required>   \r\n");
+      out.write("                    </label> \r\n");
+      out.write("                    <label class=\"label-col\" for=\"fcheckout\">Fecha Final\r\n");
+      out.write("                        <input class=\"input input-gray\" type=\"date\" id=\"fcheckout\" name=\"fcheckout\" required>\r\n");
+      out.write("                    </label>   \r\n");
+      out.write("                    <label class=\"label-col\" for=\"ndias\">Numero de Dias\r\n");
+      out.write("                        <input class=\"input input-gray\" type=\"text\" id=\"ndias\" name=\"ndias\" readonly>\r\n");
+      out.write("                    </label> \r\n");
+      out.write("                    <label class=\"label-col\">\r\n");
+      out.write("                        Cantidad Personas\r\n");
+      out.write("                        <div class=\"label-col label-grid\">\r\n");
       out.write("                        <label for=\"CP-1\" class=\"input label-radio\">\r\n");
       out.write("                             Una persona\r\n");
       out.write("                            <input class=\"btn-radio\"id=\"CP-1\" type=\"radio\" name=\"npersonas\" value=\"1\"  id=\"npersonas\"  required>  \r\n");
@@ -149,18 +165,8 @@ public final class reservar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                             Tres personas\r\n");
       out.write("                            <input class=\"btn-radio\" id=\"CP-3\" type=\"radio\" name=\"npersonas\" value=\"3\"  id=\"npersonas\" required>  \r\n");
       out.write("                        </label>\r\n");
-      out.write("                   </label>           \r\n");
-      out.write("                </div>\r\n");
-      out.write("                 <div class=\"label-grid label-grid-two\">\r\n");
-      out.write("                    <label class=\"label-col\" for=\"fcheckin\">Fecha Inicial\r\n");
-      out.write("                        <input class=\"input input-gray\" type=\"date\" id=\"fcheckin\" name=\"fcheckin\" value=\"\" required>   \r\n");
-      out.write("                    </label> \r\n");
-      out.write("                    <label class=\"label-col\" for=\"fcheckout\">Fecha Final\r\n");
-      out.write("                        <input class=\"input input-gray\" type=\"date\" id=\"fcheckout\" name=\"fcheckout\" required>\r\n");
-      out.write("                    </label>   \r\n");
-      out.write("                    <label class=\"label-col\" for=\"ndias\">Numero de Dias\r\n");
-      out.write("                        <input class=\"input input-gray\" type=\"text\" id=\"ndias\" name=\"ndias\" readonly>\r\n");
-      out.write("                    </label> \r\n");
+      out.write("                        </div>\r\n");
+      out.write("                   </label>        \r\n");
       out.write("                </div>  \r\n");
       out.write("                <div class=\"label-grid label-grid-two\">\r\n");
       out.write("                    <label for=\"\" class=\"label-col\" >Precio Servicio Adicional :\r\n");
@@ -174,7 +180,7 @@ public final class reservar_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </label>   \r\n");
       out.write("                    <label class=\"label-col\" for=\"subtotal\">Estado de la reserva\r\n");
       out.write("                         <select class=\"input input-gray\" name=\"estadoh\" id=\"estadoh\" required>\r\n");
-      out.write("                            <option disabled selected>Elegir</option>\r\n");
+      out.write("                            <option disabled value selected>Elegir</option>\r\n");
       out.write("                            <option value=\"PAGADO\">PAGADO</option>\r\n");
       out.write("                            <option value=\"PENDIENTE\">PENDIENTE</option>\r\n");
       out.write("                        </select>\r\n");

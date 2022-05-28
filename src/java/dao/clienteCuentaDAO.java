@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import modelo.Cliente;
+import modelo.Consulta;
 import modelo.Habitacion;
 import modelo.Reservar_Habitacion;
 import modelo.usuarioCliente;
@@ -110,4 +111,25 @@ public class clienteCuentaDAO {
             ex.printStackTrace();
         }
     }
+     
+     public List<Consulta> filtra(String cod){ 
+    List<Consulta> lis=new ArrayList(); 
+    Connection cn=MySQLConexion.getConexion(); 
+    try{ 
+      String sql="select codHabitacion, nombreCat,piso from habitacion JOIN categoria ON habitacion.codCategoria=categoria.codCategoria WHERE habitacion.codHabitacion=?";
+        PreparedStatement st=cn.prepareStatement(sql);  
+        st.setString(1, cod); 
+        ResultSet rs=st.executeQuery(); 
+        while(rs.next()){//leer cada fila de la tabla 
+            Consulta p=new Consulta(); 
+            p.setCodHabitacion(rs.getString(1)); 
+            p.setDescripcionCategoria(rs.getString(2)); 
+            p.setPiso(rs.getInt(3)); 
+            lis.add(p); //el objeto prestamo de un cliente pasar a la lista 
+        } 
+    }catch(Exception ex){ 
+        ex.printStackTrace(); 
+    } 
+       return lis; 
+   }    
 }

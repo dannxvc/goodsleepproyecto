@@ -1,5 +1,6 @@
 package miServlet;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -21,7 +22,8 @@ public class clientecontrol extends HttpServlet {
         if(op==1)busca(request,response);        
         if(op==2)editaPerfil(request,response);
         if(op==3)lisMisReservaciones(request,response);        
-        if(op==4)clienteReserva(request,response);    
+        if(op==4)clienteReserva(request,response);  
+        if(op==5)filtrado(request,response);  
     
     }
     
@@ -81,6 +83,15 @@ public class clientecontrol extends HttpServlet {
             String pag="/perfil.jsp";
             request.getRequestDispatcher(pag).forward(request, response);
  }
+     protected void filtrado(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException { 
+            String cod=request.getParameter("consulta");         
+            PrintWriter out = response.getWriter(); 
+            Gson gs=new Gson(); 
+            //Lo imprime en el json 
+            out.println(gs.toJson(obj.filtra(cod))); 
+         
+    } 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -119,5 +130,7 @@ public class clientecontrol extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    
 
 }

@@ -18,8 +18,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-       <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="js/filtrarHab.js" type="text/javascript"></script>
     <title>Good Sleep | Reservar</title>
 </head>
 <body id="yellow">
@@ -65,7 +67,10 @@
                                 }
                             %>
                 </select>
-                <div></div>
+                <div class="form-col form-col-filtrar" id="filtrar_hab">
+                    
+                    
+                </div>
                 <input type="hidden" name="codupdateh" id="codupdateh" value="OCUPADO">
                     <input type="hidden" name="updateh" id="updateh" value="">
                 
@@ -78,8 +83,19 @@
                                 }
                             %>
                 </select>
-                <div class="form-col">
-                    <label class="label-col label-grid">Cantidad Personas
+                 <div class="label-grid label-grid-two">
+                    <label class="label-col" for="fcheckin">Fecha Inicial
+                        <input class="input input-gray" type="date" id="fcheckin" name="fcheckin" value="" required>   
+                    </label> 
+                    <label class="label-col" for="fcheckout">Fecha Final
+                        <input class="input input-gray" type="date" id="fcheckout" name="fcheckout" required>
+                    </label>   
+                    <label class="label-col" for="ndias">Numero de Dias
+                        <input class="input input-gray" type="text" id="ndias" name="ndias" readonly>
+                    </label> 
+                    <label class="label-col">
+                        Cantidad Personas
+                        <div class="label-col label-grid">
                         <label for="CP-1" class="input label-radio">
                              Una persona
                             <input class="btn-radio"id="CP-1" type="radio" name="npersonas" value="1"  id="npersonas"  required>  
@@ -92,18 +108,8 @@
                              Tres personas
                             <input class="btn-radio" id="CP-3" type="radio" name="npersonas" value="3"  id="npersonas" required>  
                         </label>
-                   </label>           
-                </div>
-                 <div class="label-grid label-grid-two">
-                    <label class="label-col" for="fcheckin">Fecha Inicial
-                        <input class="input input-gray" type="date" id="fcheckin" name="fcheckin" value="" required>   
-                    </label> 
-                    <label class="label-col" for="fcheckout">Fecha Final
-                        <input class="input input-gray" type="date" id="fcheckout" name="fcheckout" required>
-                    </label>   
-                    <label class="label-col" for="ndias">Numero de Dias
-                        <input class="input input-gray" type="text" id="ndias" name="ndias" readonly>
-                    </label> 
+                        </div>
+                   </label>        
                 </div>  
                 <div class="label-grid label-grid-two">
                     <label for="" class="label-col" >Precio Servicio Adicional :
@@ -123,7 +129,7 @@
                         </select>
                     </label>   
                 </div>  
-                <input type="submit" class="btn btn-white" value="RESERVAR HABITACION">
+                <input type="submit" class="btn btn-white btn-reservar" value="RESERVAR HABITACION">
             </form>
         </section>
         
