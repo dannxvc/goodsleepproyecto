@@ -46,6 +46,10 @@ public final class pagListaReservas_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+
+    if(session.getAttribute("usuarioA")!=null){  
+
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"es\">\r\n");
       out.write("    <head>\r\n");
@@ -89,13 +93,15 @@ public final class pagListaReservas_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("            </ul>\r\n");
       out.write("        </nav>\r\n");
       out.write("    </header>\r\n");
-      out.write("            <main>\r\n");
-      out.write("                <h2 class=\"text-center mt-5\">Lista de Reservas</h2>     \r\n");
-      out.write("                ");
+      out.write("            \r\n");
+      out.write("            ");
 
                   listadoDAO obj=new listadoDAO(); 
-                
+             
       out.write("\r\n");
+      out.write("            \r\n");
+      out.write("            <main>\r\n");
+      out.write("                <h2 class=\"text-center mt-5\">Lista de Reservas</h2>     \r\n");
       out.write("                <table class=\"table table-hover text-center mt-3\">\r\n");
       out.write("                    <thead class=\"bg-dark text-white text-center\">\r\n");
       out.write("                        <th>ID Reserva<th>ID Cliente<th>Fecha Inicio<th>Fecha Final<th># dias<th>ID Habitacion<th>Subtotal<th>ID Servicio<th>N° Personas<th>TOTAL<th>Estado<th></th>\r\n");
@@ -121,6 +127,12 @@ public final class pagListaReservas_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
       out.write("\r\n");
+
+   }else{
+    response.sendRedirect("login_admi.jsp");
+} 
+
+      out.write("    ");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

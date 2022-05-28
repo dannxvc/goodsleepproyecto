@@ -70,14 +70,16 @@ public final class perfil_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("           LOG OUT\r\n");
       out.write("        </a>\r\n");
       out.write("        <h1>hola, ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioC.usuario}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioC.id_cliente.nombre}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" !!</h1>\r\n");
       out.write("    </header>\r\n");
       out.write("    <nav id=\"navbar\">\r\n");
       out.write("        <a href=\"perfil.jsp\">\r\n");
       out.write("            <img class=\"icon nav-icon icon-active\"  src=\"img/yo.svg\" alt=\"my profile\">\r\n");
       out.write("        </a>\r\n");
-      out.write("        <a href=\"misreservas.jsp\">\r\n");
+      out.write("        <a href=\"clientecontrol?opc=3&cod=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioC.id_cliente.id_cliente}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\">\r\n");
       out.write("            <img class=\"icon nav-icon\" src=\"img/mis-reser.svg\" alt=\"my reservations\">\r\n");
       out.write("        </a>\r\n");
       out.write("        <a href=\"reservar.jsp\">\r\n");

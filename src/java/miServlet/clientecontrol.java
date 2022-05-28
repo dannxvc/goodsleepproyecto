@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Cliente;
 import dao.clienteCuentaDAO;
+import java.sql.Date;
+import modelo.Habitacion;
+import modelo.Reservar_Habitacion;
 public class clientecontrol extends HttpServlet {
 
    clienteCuentaDAO obj=new clienteCuentaDAO();
@@ -17,8 +20,9 @@ public class clientecontrol extends HttpServlet {
          int op=Integer.parseInt(request.getParameter("opc"));
         if(op==1)busca(request,response);        
         if(op==2)editaPerfil(request,response);
-
-            
+        if(op==3)lisMisReservaciones(request,response);        
+        if(op==4)clienteReserva(request,response);    
+    
     }
     
     protected void busca(HttpServletRequest request, HttpServletResponse response)
@@ -48,7 +52,35 @@ public class clientecontrol extends HttpServlet {
       String pag="/login_cliente.jsp";
       request.getRequestDispatcher(pag).forward(request, response);
     }
+    
+     protected void lisMisReservaciones(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int cod=(Integer.parseInt(request.getParameter("cod")));
+        request.setAttribute("dato", obj.lisMisReservaciones(cod));
+        String pag="/misreservas.jsp";
+        request.getRequestDispatcher(pag).forward(request, response);        
+    }
 
+     
+     protected void clienteReserva(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        Reservar_Habitacion rev=new Reservar_Habitacion();
+        Habitacion h=new Habitacion();
+            rev.setId_cliente(Integer.parseInt(request.getParameter("idcliente")));
+            rev.setFechaInicio(Date.valueOf(request.getParameter("fcheckin")));
+            rev.setFechaFinal(Date.valueOf(request.getParameter("fcheckout")));
+            rev.setCodHabita(request.getParameter("habitacion"));
+            rev.setSubtotal(Double.parseDouble(request.getParameter("subtotal")));
+            rev.setCod_servA(request.getParameter("servicioad"));
+            rev.setCant_personas(Integer.parseInt(request.getParameter("npersonas")));
+            rev.setPrecioTotal(Double.parseDouble(request.getParameter("monto")));
+            rev.setEstado(request.getParameter("estadoh"));
+            h.setEstado(request.getParameter("codupdateh"));
+            h.setCodHabitacion(request.getParameter("updateh"));
+           obj.reservaHabitacion(rev,h);
+            String pag="/perfil.jsp";
+            request.getRequestDispatcher(pag).forward(request, response);
+ }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

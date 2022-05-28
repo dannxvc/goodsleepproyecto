@@ -51,7 +51,12 @@
                 <p>Mis datos</p>
                 
                  <input class="input input-gray" type="text" name="id_cliente" value="<%=c.getId_cliente()%>" readonly>
-                <input class="input input-gray" type="text" name="tipoDoc" value="<%=c.getTipoDoc()%>">
+                <!--<input class="input input-gray" type="text" name="tipoDoc" value="<%//=c.getTipoDoc()%>">-->
+                <select class="input input-gray" name="tipoDoc" id="tipoDoc" required>
+                    <option disabled selected value>Tipo de Documento</option>
+                    <option value="DNI">DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                </select>
                 <input class="input input-gray" type="text" name="nombre" value="<%=c.getNombre()%>" >                
                 <input class="input input-gray" type="text" name="apellido" value="<%=c.getApellido()%>">
                 <input class="input input-gray" type="tel" name="celular" value="<%=c.getCelular()%>">

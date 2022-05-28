@@ -24,13 +24,13 @@
            <img class="login-icon" src="img/profile.svg" alt="log in">
            LOG OUT
         </a>
-        <h1>hola, ${usuarioC.usuario} !!</h1>
+        <h1>hola, ${usuarioC.id_cliente.nombre} !!</h1>
     </header>
     <nav id="navbar">
         <a href="perfil.jsp">
             <img class="icon nav-icon icon-active"  src="img/yo.svg" alt="my profile">
         </a>
-        <a href="misreservas.jsp">
+        <a href="clientecontrol?opc=3&cod=${usuarioC.id_cliente.id_cliente}">
             <img class="icon nav-icon" src="img/mis-reser.svg" alt="my reservations">
         </a>
         <a href="reservar.jsp">

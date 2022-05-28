@@ -3,6 +3,9 @@
 <%@page import="modelo.Reservar_Habitacion"%>
 <%@page import="dao.listadoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    if(session.getAttribute("usuarioA")!=null){  
+%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -37,7 +40,7 @@
                         <ul>
                             <li><a href="pagListaCategoria.jsp">Categorias</a></li>               
                             <li><a href="pagListaServicioAd.jsp">Servicios Adicionales</a></li>
-                            <li><a href="pagHabitaciones.jsp"><span><i class="fa-regular fa-pen-to-square"></i></span> Habitaciones</a></li>
+                            <li><a href="pagHabitaciones.jsp"><span><i class="fa-regular fa-pen-to-square"></i></span>Habitaciones</a></li>
                         </ul>
                     </div>
                     <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
@@ -55,7 +58,7 @@
                     <div class="col-md-8">
                         <label for="" class="form-label">Nombres y Apellidos :</label>
                         <select class="form-select"  name="idcliente" id="idcliente" required>
-                            <option disabled selected>Seleccione Huesped</option>
+                            <option disabled value selected>Seleccione Huesped</option>
                             <%
                                 for (Cliente x : obj.lisCliente()) {
                                     String nombre = x.getNombre() + " " + x.getApellido();
@@ -67,17 +70,17 @@
 
                     <div class="col-md-4">
                         <label for="" class="form-label">N° documento :</label>
-                        <input type="text" class="form-control" value="" name="" id="documentoid" readonly>   
+                        <input type="text" class="form-control" value="" name="" id="documentoid" readonly required>   
                     </div>
 
                     <div class="col-md-12">
                         <label for="" class="form-label">Habitacion :</label>
-                        <select class="form-select" data-bs-toggle="dropdown" value="" name="habitacion" id="categoria">
-                            <option disabled selected>Elegir habitacion</option>
+                        <select class="form-select" data-bs-toggle="dropdown" value="" name="habitacion" id="categoria" required>
+                            <option disabled value selected>Elegir habitacion</option>
                             <%
                                 for (Consulta c : obj.lisConsulta()) {
                                     String dato = c.getCodHabitacion() + " - " + c.getNombreCategoria();
-                                    out.print("<option value=" + c.getCodHabitacion() + " data-precioh=" + c.getPrecioCategoria() + " data-codigohab=" + c.getCodHabitacion() + " >" + dato);
+                                    out.print("<option value=" + c.getCodHabitacion() + " data-precioh=" + c.getPrecioCategoria() + " data-codigohab=" + c.getCodHabitacion() + ">" + dato);
                                 }
                             %>
                         </select>
@@ -88,29 +91,29 @@
 
                     <div class="col-md-6">
                         <label for="" class="form-label">Servicio adicional :</label>
-                        <select class="form-select" name="servicioad" value="" id="servicio" >
-                            <option disabled selected>Elegir</option>
+                        <select class="form-select" name="servicioad" value="" id="servicio" required>
+                            <option disabled value selected>Elegir</option>
                             <%
                                 for (Servicio_Adicional x : obj.lisServicioAdicional()) {
-                                    out.print("<option value=" + x.getCod_servA() + " data-precioServicio=" + x.getPrecio() + " selected>" + x.getDescripcion());
+                                    out.print("<option value=" + x.getCod_servA() + " data-precioServicio=" + x.getPrecio() + ">" + x.getDescripcion());
                                 }
                             %>
                         </select>
                     </div>
 
                     <div class="col-md-6">
-                        <label for="npersonas" class="form-label">Numero de personas :</label>
-                        <input type="text" class="form-control" value="" id="npersonas" name="npersonas">
+                        <label for="npersonas" class="form-label" >Numero de personas :</label>
+                        <input type="number" class="form-control" value="" id="npersonas" name="npersonas" required min="1" max="3">
                     </div>
 
                     <div class="col-md-4">
                         <label class="form-label">Checkin :</label>
-                        <input type="date" class="form-control" value="" id="fcheckin" name="fcheckin">
+                        <input type="date" class="form-control" value="" id="fcheckin" name="fcheckin" required>
                     </div>
 
                     <div class="col-md-4">
                         <label class="form-label">Checkout :</label>
-                        <input type="date" class="form-control"  id="fcheckout" name="fcheckout">
+                        <input type="date" class="form-control"  id="fcheckout" name="fcheckout" required>
                     </div>
 
                     <div class="col-md-4">
@@ -130,8 +133,8 @@
 
                     <div class="col-md-6">
                         <label for="" class="form-label">Estado habitacion :</label>
-                        <select class="form-select" name="estadoh" id="estadoh">
-                            <option disabled selected>Elegir</option>
+                        <select class="form-select" name="estadoh" id="estadoh" required>
+                            <option disabled value selected>Elegir</option>
                             <option value="PAGADO">PAGADO</option>
                             <option value="PENDIENTE">PENDIENTE</option>
                         </select>
@@ -215,4 +218,8 @@
         </script>
     </body>
 </html>
-
+<%
+   }else{
+    response.sendRedirect("login_admi.jsp");
+} 
+%>            

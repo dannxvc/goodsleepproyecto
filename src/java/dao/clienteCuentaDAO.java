@@ -4,7 +4,11 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.Cliente;
+import modelo.Habitacion;
+import modelo.Reservar_Habitacion;
 import modelo.usuarioCliente;
 import util.MySQLConexion;
 
@@ -54,4 +58,56 @@ public class clienteCuentaDAO {
          ex.printStackTrace();
      }
      }
+    
+     public List<Reservar_Habitacion> lisMisReservaciones(int id){
+        List<Reservar_Habitacion> lis = new ArrayList();
+        Connection cn =MySQLConexion.getConexion();
+        try{
+            String sql="select id_reserva,fechaInicio,fechaFinal,codHabitacion,subTotal,codServA,cant_personas,precioTotal,estado from reservaHabitacion where id_cliente=?";
+            PreparedStatement st=cn.prepareStatement(sql);
+            st.setInt(1, id);
+            ResultSet rs=st.executeQuery();
+            while(rs.next()){
+                Reservar_Habitacion v=new Reservar_Habitacion();
+                v.setId_reserva(rs.getString(1));  
+                v.setFechaInicio(rs.getDate(2));
+                v.setFechaFinal(rs.getDate(3));
+                v.setCodHabita(rs.getString(4));
+                v.setSubtotal(rs.getDouble(5));
+                v.setCod_servA(rs.getString(6));
+                v.setCant_personas(rs.getInt(7));
+                v.setPrecioTotal(rs.getDouble(8));
+                v.setEstado(rs.getString(9));;
+                lis.add(v);
+            }
+        }catch(Exception ex){
+         ex.printStackTrace();
+        }
+        return lis;
+    }
+     
+     public void reservaHabitacion(Reservar_Habitacion r, Habitacion h){
+        try {
+            Connection cn=MySQLConexion.getConexion();
+            String sql="{call spAddReserva(?,?,?,?,?,?,?,?,?)}";
+            CallableStatement st=cn.prepareCall(sql);
+            st.setInt(1, r.getId_cliente());
+            st.setDate(2, r.getFechaInicio());
+            st.setDate(3, r.getFechaFinal());
+            st.setString(4, r.getCodHabita());
+            st.setDouble(5, r.getSubtotal());
+            st.setString(6, r.getCod_servA());
+            st.setInt(7, r.getCant_personas());
+            st.setDouble(8, r.getPrecioTotal());
+            st.setString(9, r.getEstado());
+            String sql2="update habitacion set estado=?  where codHabitacion=?"; 
+            PreparedStatement st2=cn.prepareStatement(sql2);
+            st2.setString(1, h.getEstado());
+            st2.setString(2, h.getCodHabitacion());
+            st.executeUpdate();
+            st2.executeUpdate();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 }

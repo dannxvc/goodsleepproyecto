@@ -3,6 +3,9 @@
 <%@page import="modelo.Reservar_Habitacion"%>
 <%@page import="dao.listadoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    if(session.getAttribute("usuarioA")!=null){  
+%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -120,3 +123,8 @@
     </body>
 </html>
 
+<%
+   }else{
+    response.sendRedirect("login_admi.jsp");
+} 
+%>    

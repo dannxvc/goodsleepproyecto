@@ -1,6 +1,9 @@
 
 <%@page import="modelo.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    if(session.getAttribute("usuarioA")!=null){  
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -81,3 +84,8 @@
             </main>
     </body>
 </html>
+<%
+   }else{
+    response.sendRedirect("login_admi.jsp");
+} 
+%>    

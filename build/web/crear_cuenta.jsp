@@ -33,8 +33,9 @@
                 <input class="input input-gray" type="text" placeholder="Nombre" name="nombre" required>
                 <input class="input input-gray" type="text" placeholder="Apellido" name="apellido" required>
                 <select class="input input-gray" name="tipoDoc" id="tipoDoc" required>
-                    <option value="dni">DNI</option>
-                    <option value="pasaporte">Pasaporte</option>
+                    <option disabled selected value>Tipo de Documento</option>
+                    <option value="DNI">DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
                 </select>
                 <input class="input input-gray" type="text" placeholder="Nro Documento" name="id_cliente" required>
                 <input class="input input-gray" type="tel" placeholder="Celular" name="celular" required>
