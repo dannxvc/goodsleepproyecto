@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Habitacion;
+import modelo.Servicio_Adicional;
 
 
 public class svMantenimiento extends HttpServlet {
@@ -29,6 +30,7 @@ public class svMantenimiento extends HttpServlet {
          int op=Integer.parseInt(request.getParameter("opc"));
         if(op==1)adicionHabitacion(request,response);
         if(op==2)eliminarHabitacion(request,response);
+         if(op==3)adicionServicio(request,response);
     }
     
     
@@ -55,6 +57,15 @@ public class svMantenimiento extends HttpServlet {
         request.getRequestDispatcher(pag).forward(request, response);
  }
 
+    protected void adicionServicio(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        Servicio_Adicional ser=new Servicio_Adicional();
+            ser.setDescripcion(request.getParameter("descripcion"));
+            ser.setPrecio(Double.parseDouble(request.getParameter("precio")));
+           obj.agregarServicio(ser);
+            String pag="/pagListaServicioAd.jsp";
+            request.getRequestDispatcher(pag).forward(request, response);
+ }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

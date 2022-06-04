@@ -11,6 +11,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="img/logo_purple.png" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -20,7 +21,7 @@
         <link rel="stylesheet" href="css/navAdmi.css">
         <link rel="stylesheet" href="css/clienteAdmi.css">
         <script defer src="js/menu.js"></script>
-        <title>Listado Reservas</title>
+        <title>Mantenimiento | Habitaciones</title>
     </head>
     <body>
         <header>
@@ -61,8 +62,8 @@
                             <input type="hidden" name="opc" value="1">
                             <div class="col-md-12 mt-1">
                                 <label for="" class="form-label">Categoria Habitacion :</label>
-                                <select class="form-select" name="idcategoria" >
-                                    <option disabled selected>Seleccione Categoria</option>
+                                <select class="form-select" name="idcategoria" required>
+                                    <option disabled value selected>Seleccione Categoria</option>
                                     <%
                                         for (Categoria x : obj.lisCategoria()) {
                                             out.print("<option value=" + x.getCodCategoria() + ">" + x.getNombreCat());
@@ -73,18 +74,18 @@
 
                             <div class="col-md-12 mt-3">
                                 <label for="" class="form-label">ID Habitacion :</label>
-                                <input type="text" class="form-control" id="idhabitacion" name="idhabitacion">
+                                <input type="text" class="form-control" id="idhabitacion" name="idhabitacion" required>
                             </div>
 
                             <div class="col-md-12 mt-3">
                                 <label for="" class="form-label">Piso :</label>
-                                <input type="text" class="form-control" id="piso" name="piso">
+                                <input type="text" class="form-control" id="piso" name="piso" requireds>
                             </div>
 
                             <div class="col-md-12 mt-3">
-                                <label for="" class="form-label">Estado :</label>
-                                <select class="form-select" name="estadoh">
-                                    <option disabled selected>Seleccione estado</option>
+                                <label for="" class="form-label" >Estado :</label>
+                                <select class="form-select" name="estadoh" required>
+                                    <option disabled value selected>Seleccione estado</option>
                                     <option value="DISPONIBLE">Disponible</option>
                                     <option value="OCUPADO">Ocupado</option>
                                 </select>
@@ -107,15 +108,12 @@
             </div>
             <table class="table table-hover text-center mt-3">
                 <thead class="bg-dark text-white text-center">
-                <th>ID Habitacion<th>ID Categoria<th>Piso<th>Estado<th></td><th></td>
+                <th>ID Habitacion<th>ID Categoria<th>Piso<th>Estado</td>
                     </thead>     
                     <%
                         for (Habitacion x : obj.lisHabitacion()) {
                             out.print(" <tr><td>" + x.getCodHabitacion() + "<td>" + x.getCatcategoria() + "<td>" + x.getPiso() + "<td>" + x.getEstado());
-                    %>
-                <td><a href="svReserva?opc=3&cod=<%=x.getCodHabitacion()%>"  class="enlaceEdit">editar</a></td>
-                <td><a href="svReserva?opc=2&cod=<%=x.getCodHabitacion()%>"  class="enlaceDelete">eliminar</a></td>
-                <%
+                   
                     }
                 %> 
             </table>

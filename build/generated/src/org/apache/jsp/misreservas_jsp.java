@@ -81,16 +81,18 @@ public final class misreservas_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        </a>\r\n");
       out.write("        <h1>mis reservaciones</h1>\r\n");
       out.write("    </header>\r\n");
-      out.write("    <nav id=\"navbar\">\r\n");
+      out.write("   <nav id=\"navbar\">\r\n");
       out.write("        <a href=\"perfil.jsp\">\r\n");
-      out.write("            <img class=\"icon nav-icon\"  src=\"img/yo.svg\" alt=\"my rese  rvations\">\r\n");
+      out.write("            <img class=\"icon nav-icon \"  src=\"img/yo.svg\" alt=\"my profile\">\r\n");
       out.write("        </a>\r\n");
-      out.write("        <a href=\"misreservas.jsp\">\r\n");
-      out.write("            <img class=\"icon nav-icon icon-active\" src=\"img/mis-reser.svg\" alt=\"book a room\">\r\n");
+      out.write("        <a href=\"clientecontrol?opc=3&cod=");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioC.id_cliente.id_cliente}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\">\r\n");
+      out.write("            <img class=\"icon nav-icon icon-active\" src=\"img/mis-reser.svg\" alt=\"my reservations\">\r\n");
       out.write("        </a>\r\n");
       out.write("        <a href=\"reservar.jsp\">\r\n");
       out.write("            <img class=\"icon nav-icon\" src=\"img/reservar.svg\" alt=\"book a room\">\r\n");
-      out.write("        </a>  \r\n");
+      out.write("        </a>\r\n");
       out.write("        <a href=\"index.html\">\r\n");
       out.write("            <img class=\"icon nav-icon\" src=\"img/home.svg\" alt=\"inicio\">\r\n");
       out.write("        </a>\r\n");
@@ -115,15 +117,62 @@ public final class misreservas_jsp extends org.apache.jasper.runtime.HttpJspBase
 
            
             for(Reservar_Habitacion x:lista){
-               // if(x.getId_reserva()==null){
-                 //   out.print("<tr><td>"+"No cuenta con reservaciones :(");
-               // }else{
-                out.print("<tr><td>"+x.getId_reserva()+
-                        "<td>"+x.getFechaInicio()+"<td>"+x.getFechaFinal()+"<td>"+
-                        x.numeroDias()+"<td>"+x.getCodHabita()+"<td>"+x.getSubtotal()+
-                        "<td>"+x.getCod_servA()+"<td>"+x.getCant_personas()+"<td>"+
-                        x.getPrecioTotal()+"<td>"+x.getEstado());
-               // }
+                String fondo;
+                String id=x.getId_reserva();
+                Date fi=x.getFechaInicio() ;                
+                Date ff=x.getFechaFinal() ;
+                int dias= x.numeroDias();
+                String codh=x.getCodHabita();
+                Double sub=x.getSubtotal();                
+                String serv=x.getCod_servA();
+                int cant=x.getCant_personas();
+                Double total=x.getPrecioTotal();
+                String estado=x.getEstado();
+                
+                if(estado.equals("PAGADO")){
+                    fondo="bg-success";
+                }else{
+                    fondo="bg-danger";
+                }
+                
+      out.write(" <tr>\r\n");
+      out.write("                    <td>");
+      out.print(id);
+      out.write("</td>\r\n");
+      out.write("                    <td>");
+      out.print(fi);
+      out.write("</td>\r\n");
+      out.write("                    <td>");
+      out.print(ff);
+      out.write("</td>\r\n");
+      out.write("                    <td>");
+      out.print(dias);
+      out.write("</td>\r\n");
+      out.write("                    <td>");
+      out.print(codh);
+      out.write("</td>\r\n");
+      out.write("                    <td>");
+      out.print(sub);
+      out.write("</td>\r\n");
+      out.write("                    <td>");
+      out.print(serv);
+      out.write("</td>\r\n");
+      out.write("                    <td>");
+      out.print(cant);
+      out.write("</td>                    \r\n");
+      out.write("                    <td>");
+      out.print(total);
+      out.write("</td>\r\n");
+      out.write("\r\n");
+      out.write("                    <td class=\"");
+      out.print(fondo);
+      out.write('"');
+      out.write('>');
+      out.print(estado);
+      out.write("</td>\r\n");
+      out.write("                </tr>");
+
+     
             }
         
       out.write("\r\n");

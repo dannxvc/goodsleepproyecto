@@ -3,10 +3,9 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
-import modelo.Reservar_Habitacion;
-import dao.listadoDAO;
+import modelo.Cliente;
 
-public final class pagListaReservas_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class pagEditarCliente_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -51,12 +50,12 @@ public final class pagListaReservas_jsp extends org.apache.jasper.runtime.HttpJs
 
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
-      out.write("<html lang=\"es\">\r\n");
+      out.write("<html>\r\n");
       out.write("    <head>\r\n");
-      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n");
-      out.write("        <link rel=\"icon\" href=\"img/logo_purple.png\" type=\"image/png\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("         <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n");
+      out.write("         <link rel=\"icon\" href=\"img/logo_purple.png\" type=\"image/png\">\r\n");
       out.write("        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap\" rel=\"stylesheet\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css\" integrity=\"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\r\n");
@@ -64,12 +63,12 @@ public final class pagListaReservas_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/navAdmi.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/clienteAdmi.css\">\r\n");
-      out.write("        <script defer src=\"js/menu.js\"></script>\r\n");
-      out.write("        <title>Reservas</title>\r\n");
+      out.write("         <script src=\"https://unpkg.com/sweetalert/dist/sweetalert.min.js\"></script>\r\n");
+      out.write("         <script defer src=\"js/menu.js\"></script>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <header>\r\n");
-      out.write("        <nav id=\"navbaradmi\">\r\n");
+      out.write("       <nav id=\"navbaradmi\">\r\n");
       out.write("            <div class=\"infoUsuario\">\r\n");
       out.write("                <img src=\"img/admi/");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioA.usuario}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -97,37 +96,58 @@ public final class pagListaReservas_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("            \r\n");
       out.write("            ");
 
-                  listadoDAO obj=new listadoDAO(); 
+                Cliente c=(Cliente)request.getAttribute("dato");     
              
-      out.write("\r\n");
+      out.write("  \r\n");
       out.write("            \r\n");
       out.write("            <main>\r\n");
-      out.write("                <h2 class=\"text-center mt-5\">Lista de Reservas</h2>     \r\n");
-      out.write("                <table class=\"table table-hover text-center mt-3\">\r\n");
-      out.write("                    <thead class=\"bg-dark text-white text-center\">\r\n");
-      out.write("                        <th>ID Reserva<th>ID Cliente<th>Fecha Inicio<th>Fecha Final<th># dias<th>ID Habitacion<th>Subtotal<th>ID Servicio<th>N° Personas<th>TOTAL<th>Estado<th></th>\r\n");
-      out.write("                    </thead>     \r\n");
-      out.write("                    ");
-
-                        for(Reservar_Habitacion x:obj.lisReservas()){
-                            out.print(" <tr><td>"+x.getId_reserva()+"<td>"+x.getId_cliente()+"<td>"+x.getFechaInicio()+"<td>"+x.getFechaFinal()+"<td>"+x.numeroDias()+"<td>"+x.getCodHabita()+"<td>"+x.getSubtotal()+"<td>"+x.getCod_servA()+"<td>"+x.getCant_personas()+"<td>"+x.getPrecioTotal()+"<td>"+x.getEstado());  
-                      
-      out.write("        \r\n");
-      out.write("                        <td><a href=\"svReserva?opc=6&cod=");
-      out.print(x.getId_reserva());
-      out.write("&cod2=");
-      out.print(x.getCodHabita());
-      out.write("\"  class=\"enlaceDelete\">eliminar</a></td>\r\n");
-      out.write("                    ");
-
-                        }
-                    
-      out.write("   \r\n");
-      out.write("                </table>\r\n");
-      out.write("         </main>\r\n");
+      out.write("                <form class=\"formEditarCliente mt-5\" id=\"form\" action=\"svReserva\">\r\n");
+      out.write("                    <h2 class=\"text-center mt-2\">Editar informacion</h2>\r\n");
+      out.write("                    <input type=\"hidden\" name=\"opc\" value=\"4\">\r\n");
+      out.write("                    <div class=\"col-md-12 mt-3\">\r\n");
+      out.write("                        <label for=\"idcliente\" class=\"form-label\">N° de documento :</label>\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" id=\"\" name=\"idcliente\" value=\"");
+      out.print(c.getId_cliente());
+      out.write("\" readonly>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"col-md-12 mt-1\">\r\n");
+      out.write("                        <label for=\"documento\" class=\"form-label\">Tipo de documento :</label>\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\"  name=\"documento\" value=\"");
+      out.print(c.getTipoDoc());
+      out.write("\">\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"col-md-12 mt-3\">\r\n");
+      out.write("                        <label for=\"nombre\" class=\"form-label\">Nombres:</label>\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" name=\"nombre\" value=\"");
+      out.print(c.getNombre());
+      out.write("\">\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"col-md-12 mt-3\">\r\n");
+      out.write("                        <label for=\"apellido\" class=\"form-label\">Apellidos :</label>\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\" name=\"apellido\" value=\"");
+      out.print(c.getApellido());
+      out.write("\">\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"col-md-12 mt-3\">\r\n");
+      out.write("                        <label for=\"telefono\" class=\"form-label\">Telefono :</label>\r\n");
+      out.write("                        <input type=\"text\" class=\"form-control\"  name=\"telefono\" value=\"");
+      out.print(c.getCelular());
+      out.write("\">\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"col-md-12 mt-3\">\r\n");
+      out.write("                        <label for=\"email\" class=\"form-label\">Email</label>\r\n");
+      out.write("                        <input type=\"email\" class=\"form-control\"  name=\"email\" value=\"");
+      out.print(c.getCorreo());
+      out.write("\">\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                    <div class=\"col-md-12 d-flex justify-content-evenly mt-3\">\r\n");
+      out.write("                        <button type=\"submit\" id=\"\" class=\"btn btn-primary col-md-3\">Actualizar</button>\r\n");
+      out.write("                        <button type=\"button\" class=\"btn btn-secondary col-md-3\"><a class=\"text-white\" href=\"pagListaClientes.jsp\">Regresar</a></button>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </form>\r\n");
+      out.write("            </main>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
-      out.write("\r\n");
 
    }else{
     response.sendRedirect("login_admi.jsp");

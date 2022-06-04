@@ -12,6 +12,7 @@
    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/logo_purple.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
     <script defer src="js/menu.js"></script>
     <link rel="stylesheet" href="css/navAdmi.css">
     <link rel="stylesheet" href="css/clienteAdmi.css">
-    <title>Listado Categorias</title>
+    <title>Mantenimiento | Categorias</title>
 </head>
     <body>
         <header>
@@ -58,7 +59,7 @@
           
          <table class="table table-hover text-center mt-3">
             <thead class="bg-dark text-white text-center">
-                <th>Cod categoria<th>Nombre de categoria<th>Descripcion<th>Precio</th><th>Eliminar</th>
+                <th>Cod categoria<th>Nombre de categoria<th>Descripcion<th>Precio</th>
             </thead>     
             <%
                 for(Categoria x:obj.lisCategoria()){

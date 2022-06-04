@@ -9,18 +9,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/navAdmi.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="icon" href="img/logo_purple.png" type="image/png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/navAdmi.css">
     <link rel="stylesheet" href="css/clienteAdmi.css">
     <script defer src="js/menu.js"></script>
-    <title>Listado de Clientes</title>
+    <title>Mantenimiento | Servicios Adicionales</title>
 </head>
     <body>
        <header>
@@ -45,20 +46,51 @@
             </ul>
         </nav>
     </header>
+        <%
+          listadoDAO obj=new listadoDAO(); 
+        %>
+          <div class="modal fade" id="modalServicio" tabindex="-1" aria-labelledby="modalServicio" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-light">
+                        <h5 class="modal-title" id="exampleModalLabel">Registrar Servicio Adicional</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="formListadoCliente" id="form" action="svMantenimiento">
+                            <input type="hidden" name="opc" value="3">
+                            <div class="col-md-12 mt-3">
+                                <label for="descripcion" class="form-label">Descripcion :</label>
+                                <input type="text" class="form-control" id="descripcion" name="descripcion" requireds>
+                            </div>
+
+                            <div class="col-md-12 mt-3">
+                                <label for="" class="form-label" >Precio :</label>
+                                <input type="text" class="form-control" id="precio" name="precio" required>
+                            </div> 
+                            <div class="col-md-12 d-flex justify-content-center mt-3">
+                                <button type="submit" class="btn btn-primary  col-md-4">Registrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
           <main>
         <h2 class="text-center mt-5">Lista de Servicio Adicional</h2>
+        <div class="barraCliente mt-4">
+                <button type="button" class="btn btn-success " data-bs-toggle="modal" data-bs-target="#modalServicio" id="boton-agregar">Agregar +</button>
+            </div>
 
        <!-- <div class="barraServicioAd mt-4">
             <button type="button" class="btn btn-success "></button>
         </div> -->
         
-        <%
-          listadoDAO obj=new listadoDAO(); 
-        %>
         
         <table class="table table-hover text-center mt-3">
             <thead class="bg-dark text-white text-center">
-                <th>cod Servicio Adicional<th>Descripcion<th>Precio</th><th>Eliminar</th>
+                <th>cod Servicio Adicional<th>Descripcion<th>Precio</th>
             </thead>
           <%
                 for(Servicio_Adicional x:obj.lisServicioAdicional()){

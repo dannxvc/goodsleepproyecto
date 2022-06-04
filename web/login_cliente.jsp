@@ -23,7 +23,7 @@
         <h1>log in</h1>
     </header>
     <nav id="navbar">
-        <a href="login_admi.jsp">
+        <a target="_blank" href="login_admi.jsp">
             <img class="icon nav-icon icon-active" src="img/laptop.svg" alt="go to login for admi">
         </a>
     </nav>

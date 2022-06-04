@@ -3,8 +3,6 @@ import util.MySQLConexion;
 import java.sql.*;
 import modelo.usuarioCliente;
 import modelo.Cliente;
-
-
 public class usuarioClienteDAO extends MySQLConexion{
     public usuarioCliente identificar(usuarioCliente user) throws Exception{
         usuarioCliente usu=null;
