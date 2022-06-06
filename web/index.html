@@ -20,12 +20,18 @@
         <h1>good sleep</h1>
     </header>
     <nav id="navbar">
-        <a href="index.html">
-            <img class="icon nav-icon icon-active" src="img/home.svg" alt="home">
-        </a>
-        <a href="contact.html">
-            <img class="icon nav-icon" src="img/contacto.svg" alt="contact">
-        </a>
+        <div>
+            <a href="index.html">
+                <img class="icon nav-icon icon-active" src="img/home.svg" alt="home">
+            </a>
+            <span class="tooltip">inicio</span>
+        </div>
+        <div>
+            <a href="contact.html">
+                <img class="icon nav-icon" src="img/contacto.svg" alt="contact">
+            </a>
+            <span class="tooltip">contacto</span>
+        </div>
     </nav>
     <main id="main-home">
         <section class="descripcion">
@@ -37,15 +43,21 @@
             <img class="img-cat" src="img/Diamante.jpg" alt="habitacion categoria diamante">
             <div class="group_buttons">
                 <a class="btn btn-pink" href="cat_diamante.html">VER DETALLES</a>
-                <a class="btn btn-white" href="reservar.jsp">RESERVAR</a>
+                <a class="btn btn-white btn-tooltip" href="reservar.jsp">
+                    RESERVAR
+                    <span class="tooltip tooltip_btn">RECUERDA: Debes ingresar a tu cuenta para poder reservar. Si ya ingresaste, no hay problema :)</span>
+                </a>
             </div>
         </section>
         <section class="cat cat_oro">
             <h2  class="h2-gray">categoría oro</h2>
             <img class="img-cat" src="img/Oro.jpg" alt="habitacion categoria oro">
             <div class="group_buttons">
-                <a class="btn btn-pink"href="cat_oro.html">VER DETALLES</a>
-                <a class="btn btn-white" href="reservar.jsp">RESERVAR</a>
+                <a class="btn btn-pink" href="cat_oro.html">VER DETALLES</a>
+                <a class="btn btn-white btn-tooltip" href="reservar.jsp">
+                    RESERVAR
+                    <span class="tooltip tooltip_btn">RECUERDA: Debes ingresar a tu cuenta para poder reservar. Si ya ingresaste, no hay problema :)</span>
+                </a>
             </div>
         </section>
         <section class="cat cat_plata">
@@ -53,7 +65,10 @@
             <img class="img-cat" src="img/Plata.jpg" alt="habitacion categoria plata">
             <div class="group_buttons">
                 <a class="btn btn-pink" href="cat_plata.html">VER DETALLES</a>
-                <a class="btn btn-white" href="reservar.jsp">RESERVAR</a>
+                <a class="btn btn-white btn-tooltip" href="reservar.jsp">
+                    RESERVAR
+                    <span class="tooltip tooltip_btn">RECUERDA: Debes ingresar a tu cuenta para poder reservar. Si ya ingresaste, no hay problema :)</span>
+                </a>
             </div>
         </section>
     </main>

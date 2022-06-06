@@ -23,9 +23,12 @@
         <h1>log in</h1>
     </header>
     <nav id="navbar">
+        <div>
         <a target="_blank" href="login_admi.jsp">
             <img class="icon nav-icon icon-active" src="img/laptop.svg" alt="go to login for admi">
         </a>
+        <span class="tooltip">log in admi</span>
+        </div>
     </nav>
     <main id="crear-cuenta">
         <section class="section-form section-form-login">

@@ -12,14 +12,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/logo.png" type="image/png">
+    <link rel="icon" href="img/logo_yellow.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
  <link rel="stylesheet" href="css/index.css">
-    <title>Good Sleep | Mis Reservaciones</title>
+    <title>Good Sleep | Mis Reservaciones  </title>
 </head>
 <body id="yellow">
     <%
@@ -33,18 +33,30 @@
         <h1>mis reservaciones</h1>
     </header>
    <nav id="navbar">
+        <div>
         <a href="perfil.jsp">
-            <img class="icon nav-icon "  src="img/yo.svg" alt="my profile">
+            <img class="icon nav-icon"  src="img/yo.svg" alt="my profile">
         </a>
+        <span class="tooltip">mi perfil</span>
+        </div>
+        <div>
         <a href="clientecontrol?opc=3&cod=${usuarioC.id_cliente.id_cliente}">
             <img class="icon nav-icon icon-active" src="img/mis-reser.svg" alt="my reservations">
         </a>
+        <span class="tooltip">mis reservaciones</span>
+        </div>
+        <div>
         <a href="reservar.jsp">
             <img class="icon nav-icon" src="img/reservar.svg" alt="book a room">
         </a>
+        <span class="tooltip">reservar</span>
+        </div>
+        <div>
         <a href="index.html">
             <img class="icon nav-icon" src="img/home.svg" alt="inicio">
         </a>
+        <span class="tooltip">ir al inicio</span>
+        </div>
     </nav>
     <main id="main-mis-reservas">
         <section>

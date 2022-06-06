@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/logo.png" type="image/png">
+    <link rel="icon" href="img/logo_yellow.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
@@ -35,18 +35,30 @@
         <h1>reservar habitacion</h1>
     </header>
     <nav id="navbar">
+        <div>
         <a href="perfil.jsp">
             <img class="icon nav-icon"  src="img/yo.svg" alt="my profile">
         </a>
+        <span class="tooltip">mi perfil</span>
+        </div>
+        <div>
         <a href="clientecontrol?opc=3&cod=${usuarioC.id_cliente.id_cliente}">
-            <img class="icon nav-icon" src="img/mis-reser.svg" alt="my reservations">
+            <img class="icon nav-icon " src="img/mis-reser.svg" alt="my reservations">
         </a>
+        <span class="tooltip">mis reservaciones</span>
+        </div>
+        <div>
         <a href="reservar.jsp">
             <img class="icon nav-icon icon-active" src="img/reservar.svg" alt="book a room">
         </a>
+        <span class="tooltip">reservar</span>
+        </div>
+        <div>
         <a href="index.html">
             <img class="icon nav-icon" src="img/home.svg" alt="inicio">
         </a>
+        <span class="tooltip">ir al inicio</span>
+        </div>
     </nav>
     <main id="crear-cuenta">
         <section class="section-form">

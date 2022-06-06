@@ -2,3 +2,38 @@
     display: flex;
     justify-content: center;
 }
+#navbar > div{
+    position: relative;
+}
+
+.tooltip {
+    width: 140px;
+    background-color: rgba(255, 255, 255, .7);
+    color:var(--body-home);
+    text-align: center;
+    padding: .5rem 0;
+    border-radius: .5rem;
+    position: absolute;
+    z-index: 1;
+    top: 45px;
+    left: 50%;
+    transform: translate(-70px, 0px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+#navbar > div:hover span {
+    opacity: 1;
+    transform: translate(-70px, 10px);
+}
+#navbar span:after {
+    content: '';
+    position: absolute;
+    top: -28%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent  rgba(255, 255, 255, .7) transparent;
+
+}

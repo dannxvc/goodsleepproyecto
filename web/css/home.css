@@ -68,6 +68,27 @@
     color: var(--pink);
 }
 
+
+.tooltip_btn {
+    width: 105%;
+    height: auto;
+    background-color:  var(--body-home);
+    color:var(--white);
+    top: -120px;
+    z-index: 2;
+    transform: translate(-50%, 0px);
+}
+.btn-tooltip{
+    position:relative;
+}
+.btn-tooltip:hover span {
+    opacity: 1;
+    transform: translate(-50%, 10px);
+}
+.btn-tooltip span:after{
+    content: none;
+
+}
 @media (min-width:70rem){
     #main-home{
         margin: 3rem auto 0 auto;
