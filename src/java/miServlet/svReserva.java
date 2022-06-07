@@ -42,7 +42,7 @@ public class svReserva extends HttpServlet {
             h.setEstado(request.getParameter("codupdateh"));
             h.setCodHabitacion(request.getParameter("updateh"));
            obj.reservaHabitacion(rev,h);
-            String pag="/pagListaReservas.jsp";
+            String pag="/pagReservaAdmi.jsp";
             request.getRequestDispatcher(pag).forward(request, response);
  }
      protected void eliminarReserva(HttpServletRequest request, HttpServletResponse response)

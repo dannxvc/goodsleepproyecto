@@ -31,6 +31,15 @@ li{
 li:hover{
     background-color: var(--purple-dark);
 }
+.li-active{
+     background-color: var(--purple);
+}
+.li-cerrar-sesion{
+     background-color: var(--pink-dark);
+}
+.li-cerrar-sesion:hover{
+     background-color: var(--pink);
+}
 li a{
     text-decoration: none;
     color: var(--white);

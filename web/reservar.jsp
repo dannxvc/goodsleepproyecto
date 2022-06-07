@@ -21,13 +21,16 @@
     <script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script defer src="js/sweetalert.js" type="text/javascript"></script>
+    <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
+    <script defer src="js/alerts.js"></script>
     <script src="js/filtrarHab.js" type="text/javascript"></script>
     <title>Good Sleep | Reservar</title>
 </head>
 <body id="yellow">
    
     <header id="header">
-        <a href="uccontrol?accion=cerrar" class="btn btn-login btn-logout">
+        <a id="btn-cerrar-cliente" href="uccontrol?accion=cerrar" class="btn btn-login btn-logout">
            <img class="login-icon"src="img/profile.svg" alt="log in">
            LOG OUT
         </a>

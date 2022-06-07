@@ -21,8 +21,11 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/navAdmi.css">
         <link rel="stylesheet" href="css/clienteAdmi.css">
+         <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <script defer src="js/sweetalert.js" type="text/javascript"></script>
+        <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
+        <script defer src="js/alerts.js"></script>
         <script defer src="js/menu.js"></script>
-        <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
         <title>Reservar</title>
     </head>
     <body>
@@ -33,9 +36,9 @@
                     <p> Hola, ${usuarioA.id_admi.nombre}!</p>
                 </div>
                 <ul>
-                    <li><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
+                    <li class="li-active"><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
                     <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
-                    <li><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>
+                    <li ><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>
                     <div id="mantenimiento">
                         <li id="flecha_abajo"><span><i class="fa-regular fa-pen-to-square"></i></span>Mantenimiento</li>
                         <ul>
@@ -44,7 +47,7 @@
                             <li><a href="pagHabitaciones.jsp"><span><i class="fa-regular fa-pen-to-square"></i></span>Habitaciones</a></li>
                         </ul>
                     </div>
-                    <li><a href="uacontrol?accion=cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
+                    <li class="li-cerrar-sesion"><a href="uacontrol?accion=cerrar"  id="btn-cerrar"><span><i class="fa-solid fa-right-from-bracket"></i></span> Cerrar sesion</a></li>
                 </ul>
             </nav>
         </header>
@@ -147,7 +150,7 @@
                     </div>    
 
                     <div class="col-md-12 d-flex justify-content-center">
-                        <button type="submit" class="btn btn-primary col-md-2">Registrar</button>
+                        <button id="btn-reservar"type="submit" class="btn btn-primary col-md-2">Reservar</button>
                     </div>
                 </div>
             </form>               

@@ -16,11 +16,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
-    <title>Good Sleep | Perfil ${usuarioC.id_cliente.nombre} </title>
+    <script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script defer src="js/sweetalert.js" type="text/javascript"></script>
+    <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
+    <script defer src="js/alerts.js"></script>
+   <title>Good Sleep | Perfil ${usuarioC.id_cliente.nombre} </title>
 </head>
 <body id="yellow">
     <header id="header">
-        <a href="uccontrol?accion=cerrar" class="btn btn-login btn-logout">
+        <a  id="btn-cerrar-cliente"href="uccontrol?accion=cerrar" class="btn btn-login btn-logout">
            <img class="login-icon" src="img/profile.svg" alt="log in">
            LOG OUT
         </a>
