@@ -32,12 +32,13 @@
     <body>
         <header>
 
-            <nav id="navbaradmi">
+            <nav id="navbaradmi" class="shadow  mb-5 bg-dark ">
                 <div class="infoUsuario">
                     <img src="img/admi/${usuarioA.usuario}.svg" alt="">
                     <p> Hola, ${usuarioA.id_admi.nombre}!</p>
                 </div>
                 <ul>
+                    <li><a href="dashboard.jsp"><span><i class="fa fa-area-chart"></i></span> Dashboard</a></li>
                     <li><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
                     <li class="li-active"><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
                     <li><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>

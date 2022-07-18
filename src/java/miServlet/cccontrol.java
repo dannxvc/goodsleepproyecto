@@ -27,7 +27,7 @@ crearCuentaDAO obj=new crearCuentaDAO();
         u.setUsuario(request.getParameter("usuario"));        
         u.setPassword(request.getParameter("password"));
        obj.crearCuenta(a,u);
-      String pag="/crear_cuenta.jsp";
+      String pag="/login_cliente.jsp";
       request.getRequestDispatcher(pag).forward(request, response);
         
     

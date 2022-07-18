@@ -32,7 +32,7 @@ public class listadoDAO {
         }
         return lis;
     }
-    
+        
     public List<Cliente> lisCliente(){
         List<Cliente> lis=new ArrayList();
         Connection cn=MySQLConexion.getConexion();

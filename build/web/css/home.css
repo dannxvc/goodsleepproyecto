@@ -1,5 +1,5 @@
 #main-home{
-    margin: 3rem 5% 0 5%;
+    margin: 3rem  5%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
@@ -44,6 +44,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+footer{
+    padding:2rem ;
+    background-color:var(--gray) ; 
+    text-align:center;
+    margin-top:10%;
 }
 .btn{
     border: none;
@@ -91,7 +97,7 @@
 }
 @media (min-width:70rem){
     #main-home{
-        margin: 3rem auto 0 auto;
+        margin: 3rem auto 3rem auto;
         width: 70rem;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto auto;

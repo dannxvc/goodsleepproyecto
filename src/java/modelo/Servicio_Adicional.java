@@ -5,6 +5,8 @@ public class Servicio_Adicional {
          private String cod_servA;
          private String descripcion;
          private double precio;
+         private int cantServicios;
+         
          
     public Servicio_Adicional() {
     }
@@ -37,5 +39,13 @@ public class Servicio_Adicional {
 
     public void setPrecio(double precio) {
         this.precio = precio;
+    }
+
+    public int getCantServicios() {
+        return cantServicios;
+    }
+
+    public void setCantServicios(int cantServicios) {
+        this.cantServicios = cantServicios;
     }
 }

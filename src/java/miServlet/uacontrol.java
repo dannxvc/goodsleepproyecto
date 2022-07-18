@@ -91,7 +91,7 @@ public class uacontrol extends HttpServlet {
             sesion = request.getSession();
             sesion.setAttribute("usuarioA", usuarioA);
             request.setAttribute("msje", "Bienvenido/a al sistema");
-            this.getServletConfig().getServletContext().getRequestDispatcher("/pagListaClientes.jsp").forward(request, response);
+            this.getServletConfig().getServletContext().getRequestDispatcher("/dashboard.jsp").forward(request, response);
         }else{
             request.setAttribute("msje", "Usuario o password incorrecto");
             request.getRequestDispatcher("login_admi.jsp").forward(request, response);

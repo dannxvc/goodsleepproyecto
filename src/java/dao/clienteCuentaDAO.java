@@ -23,7 +23,7 @@ public class clienteCuentaDAO {
         PreparedStatement st=cn.prepareStatement(sql);
         st.setString(1, id);
         ResultSet rs=st.executeQuery();
-        while(rs.next()){//leer cada fila de la tabla
+        while(rs.next()){
             p=new Cliente();
             p.setId_cliente(rs.getInt(1));
             p.setTipoDoc(rs.getString(2));

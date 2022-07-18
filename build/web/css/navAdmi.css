@@ -34,8 +34,11 @@ li:hover{
 .li-active{
      background-color: var(--purple);
 }
-.li-cerrar-sesion{
-     background-color: var(--pink-dark);
+#btn-cerrar{
+     color: var(--pink);
+}
+.li-cerrar-sesion:hover #btn-cerrar{
+     color: var(--white);
 }
 .li-cerrar-sesion:hover{
      background-color: var(--pink);
@@ -82,6 +85,6 @@ img{
     color:var(--black);
 }
 #mantenimiento ul>li:hover{
-    background-color: var(--aqua-light);
+    background-color: var(--purple);
 
 }

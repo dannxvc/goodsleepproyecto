@@ -61,6 +61,7 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
       out.write("        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n");
+      out.write("        <link rel=\"icon\" href=\"img/logo_purple.png\" type=\"image/png\">\r\n");
       out.write("        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap\" rel=\"stylesheet\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css\" integrity=\"sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\r\n");
@@ -68,9 +69,12 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/navAdmi.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"css/clienteAdmi.css\">\r\n");
+      out.write("         <script src=\"js/jquery-1.10.2.min.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <script defer src=\"js/sweetalert.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <link href=\"css/sweetalert.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <script defer src=\"js/alerts.js\"></script>\r\n");
       out.write("        <script defer src=\"js/menu.js\"></script>\r\n");
-      out.write("        <script src=\"js/jquery-1.10.2.min.js\" type=\"text/javascript\"></script>\r\n");
-      out.write("        <title>Document</title>\r\n");
+      out.write("        <title>Reservar</title>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <header>\r\n");
@@ -84,18 +88,18 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("!</p>\r\n");
       out.write("                </div>\r\n");
       out.write("                <ul>\r\n");
-      out.write("                    <li><a href=\"pagReservaAdmi.jsp\"><span><i class=\"fa-regular fa-address-card\"></i></span> Registro</a></li>\r\n");
+      out.write("                    <li class=\"li-active\"><a href=\"pagReservaAdmi.jsp\"><span><i class=\"fa-regular fa-address-card\"></i></span> Registro</a></li>\r\n");
       out.write("                    <li><a href=\"pagListaClientes.jsp\"><span><i class=\"fa-solid fa-user\"></i></span> Clientes</a></li>\r\n");
-      out.write("                    <li><a href=\"pagListaReservas.jsp\"><span><i class=\"fa-solid fa-bed\"></i></span> Reservas</a></li>\r\n");
+      out.write("                    <li ><a href=\"pagListaReservas.jsp\"><span><i class=\"fa-solid fa-bed\"></i></span> Reservas</a></li>\r\n");
       out.write("                    <div id=\"mantenimiento\">\r\n");
       out.write("                        <li id=\"flecha_abajo\"><span><i class=\"fa-regular fa-pen-to-square\"></i></span>Mantenimiento</li>\r\n");
       out.write("                        <ul>\r\n");
       out.write("                            <li><a href=\"pagListaCategoria.jsp\">Categorias</a></li>               \r\n");
       out.write("                            <li><a href=\"pagListaServicioAd.jsp\">Servicios Adicionales</a></li>\r\n");
-      out.write("                            <li><a href=\"pagHabitaciones.jsp\"><span><i class=\"fa-regular fa-pen-to-square\"></i></span> Habitaciones</a></li>\r\n");
+      out.write("                            <li><a href=\"pagHabitaciones.jsp\"><span><i class=\"fa-regular fa-pen-to-square\"></i></span>Habitaciones</a></li>\r\n");
       out.write("                        </ul>\r\n");
       out.write("                    </div>\r\n");
-      out.write("                    <li><a href=\"uacontrol?accion=cerrar\"><span><i class=\"fa-solid fa-right-from-bracket\"></i></span> Cerrar sesion</a></li>\r\n");
+      out.write("                    <li class=\"li-cerrar-sesion\"><a href=\"uacontrol?accion=cerrar\"  id=\"btn-cerrar\"><span><i class=\"fa-solid fa-right-from-bracket\"></i></span> Cerrar sesion</a></li>\r\n");
       out.write("                </ul>\r\n");
       out.write("            </nav>\r\n");
       out.write("        </header>\r\n");
@@ -112,7 +116,7 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    <div class=\"col-md-8\">\r\n");
       out.write("                        <label for=\"\" class=\"form-label\">Nombres y Apellidos :</label>\r\n");
       out.write("                        <select class=\"form-select\"  name=\"idcliente\" id=\"idcliente\" required>\r\n");
-      out.write("                            <option disabled selected>Seleccione Huesped</option>\r\n");
+      out.write("                            <option disabled value selected>Seleccione Huesped</option>\r\n");
       out.write("                            ");
 
                                 for (Cliente x : obj.lisCliente()) {
@@ -132,12 +136,12 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    <div class=\"col-md-12\">\r\n");
       out.write("                        <label for=\"\" class=\"form-label\">Habitacion :</label>\r\n");
       out.write("                        <select class=\"form-select\" data-bs-toggle=\"dropdown\" value=\"\" name=\"habitacion\" id=\"categoria\" required>\r\n");
-      out.write("                            <option disabled selected>Elegir habitacion</option>\r\n");
+      out.write("                            <option disabled value selected>Elegir habitacion</option>\r\n");
       out.write("                            ");
 
                                 for (Consulta c : obj.lisConsulta()) {
                                     String dato = c.getCodHabitacion() + " - " + c.getNombreCategoria();
-                                    out.print("<option value=" + c.getCodHabitacion() + " data-precioh=" + c.getPrecioCategoria() + " data-codigohab=" + c.getCodHabitacion() + " required>" + dato);
+                                    out.print("<option value=" + c.getCodHabitacion() + " data-precioh=" + c.getPrecioCategoria() + " data-codigohab=" + c.getCodHabitacion() + ">" + dato);
                                 }
                             
       out.write("\r\n");
@@ -150,11 +154,11 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    <div class=\"col-md-6\">\r\n");
       out.write("                        <label for=\"\" class=\"form-label\">Servicio adicional :</label>\r\n");
       out.write("                        <select class=\"form-select\" name=\"servicioad\" value=\"\" id=\"servicio\" required>\r\n");
-      out.write("                            <option disabled selected>Elegir</option>\r\n");
+      out.write("                            <option disabled value selected>Elegir</option>\r\n");
       out.write("                            ");
 
                                 for (Servicio_Adicional x : obj.lisServicioAdicional()) {
-                                    out.print("<option value=" + x.getCod_servA() + " data-precioServicio=" + x.getPrecio() + " selected>" + x.getDescripcion());
+                                    out.print("<option value=" + x.getCod_servA() + " data-precioServicio=" + x.getPrecio() + ">" + x.getDescripcion());
                                 }
                             
       out.write("\r\n");
@@ -162,18 +166,18 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    </div>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"col-md-6\">\r\n");
-      out.write("                        <label for=\"npersonas\" class=\"form-label\">Numero de personas :</label>\r\n");
-      out.write("                        <input type=\"text\" class=\"form-control\" value=\"\" id=\"npersonas\" name=\"npersonas\">\r\n");
+      out.write("                        <label for=\"npersonas\" class=\"form-label\" >Numero de personas :</label>\r\n");
+      out.write("                        <input type=\"number\" class=\"form-control\" value=\"\" id=\"npersonas\" name=\"npersonas\" required min=\"1\" max=\"3\">\r\n");
       out.write("                    </div>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"col-md-4\">\r\n");
       out.write("                        <label class=\"form-label\">Checkin :</label>\r\n");
-      out.write("                        <input type=\"date\" class=\"form-control\" value=\"\" id=\"fcheckin\" name=\"fcheckin\">\r\n");
+      out.write("                        <input type=\"date\" class=\"form-control\" value=\"\" id=\"fcheckin\" name=\"fcheckin\" required>\r\n");
       out.write("                    </div>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"col-md-4\">\r\n");
       out.write("                        <label class=\"form-label\">Checkout :</label>\r\n");
-      out.write("                        <input type=\"date\" class=\"form-control\"  id=\"fcheckout\" name=\"fcheckout\">\r\n");
+      out.write("                        <input type=\"date\" class=\"form-control\"  id=\"fcheckout\" name=\"fcheckout\" required>\r\n");
       out.write("                    </div>\r\n");
       out.write("\r\n");
       out.write("                    <div class=\"col-md-4\">\r\n");
@@ -193,8 +197,8 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("\r\n");
       out.write("                    <div class=\"col-md-6\">\r\n");
       out.write("                        <label for=\"\" class=\"form-label\">Estado habitacion :</label>\r\n");
-      out.write("                        <select class=\"form-select\" name=\"estadoh\" id=\"estadoh\">\r\n");
-      out.write("                            <option disabled selected>Elegir</option>\r\n");
+      out.write("                        <select class=\"form-select\" name=\"estadoh\" id=\"estadoh\" required>\r\n");
+      out.write("                            <option disabled value selected>Elegir</option>\r\n");
       out.write("                            <option value=\"PAGADO\">PAGADO</option>\r\n");
       out.write("                            <option value=\"PENDIENTE\">PENDIENTE</option>\r\n");
       out.write("                        </select>\r\n");
@@ -206,7 +210,7 @@ public final class pagReservaAdmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                    </div>    \r\n");
       out.write("\r\n");
       out.write("                    <div class=\"col-md-12 d-flex justify-content-center\">\r\n");
-      out.write("                        <button type=\"submit\" class=\"btn btn-primary col-md-2\">Registrar</button>\r\n");
+      out.write("                        <button id=\"btn-reservar\"type=\"submit\" class=\"btn btn-primary col-md-2\">Reservar</button>\r\n");
       out.write("                    </div>\r\n");
       out.write("                </div>\r\n");
       out.write("            </form>               \r\n");

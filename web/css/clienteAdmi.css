@@ -2,11 +2,12 @@ main{
     width: 80%;
     margin: 0 auto;
 }
-
+body{
+    background: radial-gradient(#fff,#EDE9F2);
+}
 .main_habitacion{
     margin: 0 auto;
 }
-
 button{
     margin-top: 15px;
     margin-bottom: 15px;
@@ -47,4 +48,8 @@ button{
     color: white;
 }
 
+.dash2{
+    color:white;
+    background: hsl(255,86%,67%);
+}
 

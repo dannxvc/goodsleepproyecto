@@ -49,7 +49,7 @@ public final class login_005fadmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("    <meta charset=\"UTF-8\">\r\n");
       out.write("    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
-      out.write("    <link rel=\"icon\" href=\"/img/logo.png\" type=\"image/png\">\r\n");
+      out.write("    <link rel=\"icon\" href=\"img/logo_purple.png\" type=\"image/png\">\r\n");
       out.write("    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n");
       out.write("    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n");
       out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap\" rel=\"stylesheet\">\r\n");
@@ -66,9 +66,12 @@ public final class login_005fadmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <h1>log in admi</h1>\r\n");
       out.write("    </header>\r\n");
       out.write("    <nav id=\"navbar\">\r\n");
+      out.write("        <div>\r\n");
       out.write("        <a href=\"login_cliente.jsp\">\r\n");
       out.write("            <img class=\"icon nav-icon\" src=\"img/profile.svg\" alt=\"go to login for admi\">\r\n");
       out.write("        </a>\r\n");
+      out.write("        <span class=\"tooltip\">log in cliente</span>\r\n");
+      out.write("        </div>\r\n");
       out.write("    </nav>\r\n");
       out.write("    <main id=\"crear-cuenta\">\r\n");
       out.write("        <section class=\"section-form section-form-login\">\r\n");
@@ -77,7 +80,7 @@ public final class login_005fadmi_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("                <input class=\"input input-gray\" type=\"text\" placeholder=\"Usuario\" name=\"usuario\" required>\r\n");
       out.write("                <input class=\"input input-gray\" type=\"password\" placeholder=\"Password\" name=\"password\" required>\r\n");
       out.write("                <p class=\"p-pink\"><img class=\"login-icon\" src=\"img/danger.svg\" alt=\"\"> Log In solo para administrador@s.  </p>\r\n");
-      out.write("                <input target=\"_blank\" type=\"submit\" name=\"verificar\" class=\"btn btn-pink\" value=\"INICIAR SESION\">\r\n");
+      out.write("                <input type=\"submit\" name=\"verificar\" class=\"btn btn-pink\" value=\"INICIAR SESION\">\r\n");
       out.write("            </form>\r\n");
       out.write("            ");
 

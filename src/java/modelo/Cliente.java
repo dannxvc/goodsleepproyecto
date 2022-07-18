@@ -8,6 +8,7 @@ public class Cliente {
    private String apellido;
    private String celular;
    private String correo;
+   private int cantClientes = 0;
    
     public Cliente() {
     }
@@ -67,5 +68,13 @@ public class Cliente {
 
     public void setCelular(String celular) {
         this.celular = celular;
+    }
+
+    public int getCantClientes() {
+        return cantClientes;
+    }
+
+    public void setCantClientes(int cantClientes) {
+        this.cantClientes = cantClientes;
     }
 }

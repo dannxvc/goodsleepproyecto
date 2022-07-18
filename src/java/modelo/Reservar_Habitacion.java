@@ -13,6 +13,7 @@ public class Reservar_Habitacion{
          private int cant_personas;
          private double precioTotal;
          private String estado;
+         private int cantReservas;
 
     public Reservar_Habitacion() {
     }
@@ -114,6 +115,14 @@ public class Reservar_Habitacion{
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public int getCantReservas() {
+        return cantReservas;
+    }
+
+    public void setCantReservas(int cantReservas) {
+        this.cantReservas = cantReservas;
     }
     
     

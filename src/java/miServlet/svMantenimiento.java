@@ -15,7 +15,6 @@ import modelo.Servicio_Adicional;
 public class svMantenimiento extends HttpServlet {
     
     mantenimientoDAO obj=new mantenimientoDAO();
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.

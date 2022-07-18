@@ -28,7 +28,7 @@
     </nav>
     <main id="crear-cuenta">
         <section class="section-form">
-            <form id="id_form" class="form form-crear-cuenta" action="cccontrol">
+            <form id="id_form" class="form form-crear-cuenta" action="cccontrol" method="POST">
                 <p>Registra tus datos</p>
                 <input class="input input-gray" type="text" placeholder="Nombre" name="nombre" required>
                 <input class="input input-gray" type="text" placeholder="Apellido" name="apellido" required>

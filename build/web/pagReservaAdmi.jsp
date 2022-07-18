@@ -26,16 +26,18 @@
         <link href="css/sweetalert.css" rel="stylesheet" type="text/css"/>
         <script defer src="js/alerts.js"></script>
         <script defer src="js/menu.js"></script>
+        <link rel="stylesheet" href="css/index.css">
         <title>Reservar</title>
     </head>
     <body>
         <header>
-            <nav id="navbaradmi">
+            <nav id="navbaradmi" class="shadow mb-5 bg-dark">
                 <div class="infoUsuario">
                     <img src="img/admi/${usuarioA.usuario}.svg" alt="">
                     <p> Hola, ${usuarioA.id_admi.nombre}!</p>
                 </div>
                 <ul>
+                    <li><a href="dashboard.jsp"><span><i class="fa fa-area-chart"></i></span> Dashboard</a></li>
                     <li class="li-active"><a href="pagReservaAdmi.jsp"><span><i class="fa-regular fa-address-card"></i></span> Registro</a></li>
                     <li><a href="pagListaClientes.jsp"><span><i class="fa-solid fa-user"></i></span> Clientes</a></li>
                     <li ><a href="pagListaReservas.jsp"><span><i class="fa-solid fa-bed"></i></span> Reservas</a></li>
@@ -53,7 +55,7 @@
         </header>
         <main>
             <h2 class="text-center mt-5 text-black">Registrar Reserva</h2>
-            <form class="mt-5" id="form" action="svReserva"> 
+            <form class="mt-5 shadow p-3 mb-5 rounded" id="form" action="svReserva"> 
                 <div class="row g-3 p-5">
                     <input type="hidden" name="opc" value="5">  
                     <%

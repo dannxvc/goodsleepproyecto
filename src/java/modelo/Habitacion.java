@@ -7,7 +7,7 @@ public class Habitacion {
     private String piso;
     private String id_empresa;
     private String estado;
-        
+    private int cantHabitaciones;
     public Habitacion() {
     }
     
@@ -58,7 +58,15 @@ public class Habitacion {
     public void setId_empresa(String id_empresa) {
         this.id_empresa = id_empresa;
     }
-    
+
+    public int getCantHabitaciones() {
+        return cantHabitaciones;
+    }
+
+    public void setCantHabitaciones(int cantHabitaciones) {
+        this.cantHabitaciones = cantHabitaciones;
+    }
+
     
     
     
