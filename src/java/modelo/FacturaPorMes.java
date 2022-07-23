@@ -3,6 +3,13 @@ public class FacturaPorMes {
     private int mes;     
     private int cantidad; 
 
+    
+    public String Lmes(){
+        String m[]={"","Ene","Feb","Mar","Abr","May","Jun","Jul","Ago",
+      "Set","Oct","Nov","Dic"};
+        return m[mes];
+    }
+    
     public int getCantidad() {
         return cantidad;
     }

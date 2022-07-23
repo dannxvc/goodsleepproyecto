@@ -137,7 +137,7 @@
                             </div>
                         </div>
                  </div>
-<!--                <div class="row gap-5 mx-auto text-center "> 
+<!--             <div class="row gap-5 mx-auto text-center "> 
                     
                         
                         <div class="col card shadow p-3 bg-body rounded border-0" style="width: 18rem;">
@@ -162,7 +162,7 @@
                             </div>
                         </div>
                 </div>                -->
-<%
+        <%
              graficoDAO obj2=new graficoDAO();
         %>
         <h2>Grafico por facturas mes</h2> 
@@ -183,7 +183,7 @@
             </thead>
              <%
                 for(FacturaPorMes x:obj2.lisFacPorMes()){
-                    out.print("<tr><td>"+x.getMes()+"<td>"+x.getCantidad());
+                    out.print("<tr><td>"+x.Lmes()+"<td>"+x.getCantidad());
              }%>
         </table>
         <form action="graficoFA.jsp" target="win" class="form-control  mx-auto"  style="width: 220px;">

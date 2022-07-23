@@ -46,14 +46,14 @@
         String label="",dato="";
         graficoDAO obj = new graficoDAO();
         for(FacturaPorMes x:obj.lisFacPorMes()){
-            label+="'"+x.getMes()+"',";
+            label+="'"+x.Lmes()+"',";
             dato += x.getCantidad()+",";
         }
         label="["+label.substring(0,label.length()-1)+"]";
      dato="["+dato.substring(0,dato.length()-1)+"]";
    %>
     <div class="container">
-          <h2>Grafico de las ventas por anio</h2>
+          <h2>Grafico de Reservas por Mes</h2>
           <div>
               <canvas id="myChart"></canvas>
           </div>
