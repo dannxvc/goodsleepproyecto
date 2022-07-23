@@ -68,7 +68,7 @@ public final class pagEditarCliente_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <header>\r\n");
-      out.write("       <nav id=\"navbaradmi\">\r\n");
+      out.write("       <nav id=\"navbaradmi\" class=\"shadow mb-5 bg-dark \">\r\n");
       out.write("            <div class=\"infoUsuario\">\r\n");
       out.write("                <img src=\"img/admi/");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${usuarioA.usuario}", java.lang.String.class, (PageContext)_jspx_page_context, null));
@@ -78,6 +78,7 @@ public final class pagEditarCliente_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("!</p>\r\n");
       out.write("            </div>\r\n");
       out.write("            <ul>\r\n");
+      out.write("                <li><a href=\"dashboard.jsp\"><span><i class=\"fa fa-area-chart\"></i></span> Dashboard</a></li>\r\n");
       out.write("                <li><a href=\"pagReservaAdmi.jsp\"><span><i class=\"fa-regular fa-address-card\"></i></span> Registro</a></li>\r\n");
       out.write("                <li><a href=\"pagListaClientes.jsp\"><span><i class=\"fa-solid fa-user\"></i></span> Clientes</a></li>\r\n");
       out.write("                <li><a href=\"pagListaReservas.jsp\"><span><i class=\"fa-solid fa-bed\"></i></span> Reservas</a></li>\r\n");

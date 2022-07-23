@@ -7,7 +7,7 @@ import modelo.FacturaPorMes;
 import modelo.Cliente;
 import dao.graficoDAO;
 
-public final class graficoFA_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class FacturaPorMes_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();

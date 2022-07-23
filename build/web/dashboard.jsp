@@ -1,3 +1,4 @@
+<%@page import="dao.graficoDAO"%>
 <%@page import="dao.listadoDAO"%>
 <%@page import="modelo.*"%>
 <%@page import="java.util.List"%>
@@ -136,7 +137,7 @@
                             </div>
                         </div>
                  </div>
-                <div class="row gap-5 mx-auto text-center "> 
+<!--                <div class="row gap-5 mx-auto text-center "> 
                     
                         
                         <div class="col card shadow p-3 bg-body rounded border-0" style="width: 18rem;">
@@ -160,7 +161,45 @@
                               <a href="pagListaServicioAd.jsp" class="btn btn btn-outline-info">Ir a Servicios</a>
                             </div>
                         </div>
-                </div>                
+                </div>                -->
+<%
+             graficoDAO obj2=new graficoDAO();
+        %>
+        <h2>Grafico por facturas mes</h2> 
+     
+        
+        <br>
+        <br>
+        <table class="table table-dark mx-auto" style="width: 220px;">
+            <thead>
+            <tr class="bg-light">
+                <th>
+                    Mes
+                </th>
+                <th>
+                    Cantidad
+                </th>
+            </tr>
+            </thead>
+             <%
+                for(FacturaPorMes x:obj2.lisFacPorMes()){
+                    out.print("<tr><td>"+x.getMes()+"<td>"+x.getCantidad());
+             }%>
+        </table>
+        <form action="graficoFA.jsp" target="win" class="form-control  mx-auto"  style="width: 220px;">
+            <label for="torta">
+                <input id="torta" type="radio" value="1" name="opc" onclick="submit()"/> Torta 
+            </label>
+             <label for="barras">
+            <input id="barras" type="radio" value="2" name="opc" onclick="submit()"/> Barras 
+            </label>
+            <label for="lineal">
+            <input id="lineal" type="radio" value="3" name="opc" onclick="submit()"/> Lineal          
+            </label>
+        </form>
+        <iframe class="" name="win" height="500" style="width: 100%;">        
+            
+        </iframe>
             </div>
         </main>
           

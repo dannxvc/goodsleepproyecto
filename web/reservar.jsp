@@ -65,7 +65,7 @@
     </nav>
     <main id="crear-cuenta">
         <section class="section-form">
-            <form class="form form-reservar" action="clientecontrol">
+            <form class="form form-reservar" action="clientecontrol" method="post">
                 <%
                         listadoDAO obj = new listadoDAO();
                     %>

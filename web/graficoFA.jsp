@@ -1,6 +1,5 @@
-<%@page import="dao.graficoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="modelo.*"%>
+<%@page import="modelo.*,dao.graficoDAO"%>
 
 <html>
   <link
@@ -38,18 +37,23 @@
   <body>
      
    
-   <%    
+   <%
+       int op=Integer.parseInt(request.getParameter("opc"));
+       String tipo="";
+        if(op==1)tipo = "pie";
+        if(op==2)tipo = "bar";
+        if(op==3)tipo = "line";      
         String label="",dato="";
         graficoDAO obj = new graficoDAO();
-        for(CantPorEstado x:obj.lisCantPorEstado()){
-            label+="'"+x.getEstado()+"',";
-            dato += x.getCant()+",";
+        for(FacturaPorMes x:obj.lisFacPorMes()){
+            label+="'"+x.getMes()+"',";
+            dato += x.getCantidad()+",";
         }
-        //label="["+label.substring(0,label.length())+"]";
-       //  dato="["+dato.substring(0,dato.length())+"]";
+        label="["+label.substring(0,label.length()-1)+"]";
+     dato="["+dato.substring(0,dato.length()-1)+"]";
    %>
     <div class="container">
-          <h2>Esta</h2>
+          <h2>Grafico de las ventas por anio</h2>
           <div>
               <canvas id="myChart"></canvas>
           </div>
@@ -58,13 +62,13 @@
   <script>
     var ctx = document.getElementById("myChart").getContext("2d");
     var myChart = new Chart(ctx, {
-      type: "pie",
+      type: "<%=tipo%>",
       data: {
-        labels: <%="["+label+"]"%>,
+        labels: <%=label%>,
         datasets: [
           {
             label: "work load",
-            data: <%="["+dato+"]"%>,
+            data: <%=dato%>,
             backgroundColor: ["rgba(153,205,1,0.6)",
              'yellow',
              'orange',

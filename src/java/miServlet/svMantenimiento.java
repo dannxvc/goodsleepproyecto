@@ -42,7 +42,7 @@ public class svMantenimiento extends HttpServlet {
            h.setId_empresa(request.getParameter("idempresa"));
            h.setEstado(request.getParameter("estadoh"));
             obj.agregarHabitacion(h);
-        String pag="/pagHabitaciones.jsp";
+        String pag="/dashboard.jsp";
         request.getRequestDispatcher(pag).forward(request, response);
  }
     
